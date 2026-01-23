@@ -9,6 +9,7 @@
 :root {
     /* Primary Colors - Mediterranean Palette */
     --primary-teal: #3B9B8F;
+    --primary-green: #3B9B8F; /* Alias for primary-teal */
     --primary-dark: #2A7368;
     --primary-light: #5FB3A7;
     --primary-lighter: #EBF5F3;
@@ -108,7 +109,7 @@ button {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-dark) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
