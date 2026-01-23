@@ -8,7 +8,7 @@
 .page-header {
     position: relative;
     padding: 140px 0 var(--spacing-3xl);
-    background: linear-gradient(135deg, #1a4d47 0%, #0f2e2a 100%);
+    background: linear-gradient(135deg, #1f5f57 0%, #154741 100%);
     color: var(--white);
     overflow: hidden;
 }
@@ -538,7 +538,8 @@
     right: 1.5rem;
     width: 52px;
     height: 52px;
-    background: linear-gradient(135deg, var(--primary-teal), var(--primary-light));
+    background-color: #3B9B8F;
+    background: linear-gradient(135deg, #3B9B8F 0%, #5FB3A7 100%);
     color: var(--white);
     border-radius: 50%;
     display: flex;
