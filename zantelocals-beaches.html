@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Best bars and clubs in Zakynthos. Legendary nightlife and sunset cocktails recommended by locals.">
-    <title>Bars & Clubs - ZanteLocals</title>
+    <meta name="description" content="Discover the best beaches in Zakynthos. From the iconic Navagio Shipwreck to hidden local coves. Complete guide with parking, best times to visit, and travel tips.">
+    <title>Beaches - ZanteLocals</title>
     <link rel="stylesheet" href="zantelocals-styles.css">
     <link rel="stylesheet" href="zantelocals-category.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +23,8 @@
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="zantelocals-restaurants.html" class="nav-link">Restaurants</a></li>
-                    <li><a href="zantelocals-bars.html" class="nav-link active">Bars & Clubs</a></li>
-                    <li><a href="zantelocals-beaches.html" class="nav-link">Beaches</a></li>
+                    <li><a href="zantelocals-bars.html" class="nav-link">Bars & Clubs</a></li>
+                    <li><a href="zantelocals-beaches.html" class="nav-link active">Beaches</a></li>
                     <li><a href="zantelocals-experiences.html" class="nav-link">Experiences</a></li>
                     <li><a href="zantelocals-rentals.html" class="nav-link">Rentals</a></li>
                 </ul>
@@ -48,15 +48,15 @@
                 <div class="breadcrumb">
                     <a href="index.html">Home</a>
                     <span>/</span>
-                    <span>Bars & Clubs</span>
+                    <span>Beaches</span>
                 </div>
                 <h1 class="page-title">
-                    <span class="title-icon">🍹</span>
-                    Bars & Clubs
+                    <span class="title-icon">🏖️</span>
+                    Beaches
                 </h1>
-                <p class="page-subtitle">Experience the legendary nightlife and stunning sunset views of Zakynthos</p>
+                <p class="page-subtitle">Discover pristine sandy shores, hidden coves, and iconic beaches across Zakynthos</p>
                 <div class="page-stats">
-                    <span class="stat">35+ Venues</span>
+                    <span class="stat">25+ Beaches</span>
                     <span class="stat-divider">•</span>
                     <span class="stat">All Local Verified</span>
                     <span class="stat-divider">•</span>
@@ -79,13 +79,9 @@
                     </label>
                     <select class="filter-select" id="location-filter">
                         <option value="all">All Locations</option>
-                        <option value="zakynthos-town">Zakynthos Town</option>
-                        <option value="laganas">Laganas</option>
-                        <option value="argassi">Argassi</option>
-                        <option value="tsilivi">Tsilivi</option>
-                        <option value="alykanas">Alykanas</option>
-                        <option value="kampi">Kampi</option>
-                        <option value="kalamaki">Kalamaki</option>
+                        <option value="volimes">Volimes (North)</option>
+                        <option value="porto-vromi">Porto Vromi</option>
+                        <option value="southeast">Southeast Coast</option>
                     </select>
                 </div>
 
@@ -94,31 +90,26 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z" fill="currentColor"/>
                         </svg>
-                        Vibe
+                        Beach Type
                     </label>
-                    <select class="filter-select" id="vibe-filter">
-                        <option value="all">All Vibes</option>
-                        <option value="sunset">Sunset Bar</option>
-                        <option value="beach">Beach Bar</option>
-                        <option value="nightclub">Night Club</option>
-                        <option value="cocktail">Cocktail Bar</option>
-                        <option value="party">Party Bar</option>
-                        <option value="lounge">Lounge</option>
+                    <select class="filter-select" id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="must-see">Must-See</option>
+                        <option value="hidden">Hidden Gem</option>
                     </select>
                 </div>
 
                 <div class="filter-group">
                     <label class="filter-label">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 7H21M10 12H21M3 17H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M20 7H4C2.9 7 2 7.9 2 9V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V9C22 7.9 21.1 7 20 7ZM20 18H4V9H20V18ZM2 5H22V3H2V5Z" fill="currentColor"/>
                         </svg>
-                        Price Range
+                        Ideal For
                     </label>
-                    <select class="filter-select" id="price-filter">
-                        <option value="all">All Prices</option>
-                        <option value="budget">€ - Budget Friendly</option>
-                        <option value="moderate">€€ - Moderate</option>
-                        <option value="upscale">€€€ - Upscale</option>
+                    <select class="filter-select" id="ideal-filter">
+                        <option value="all">Everyone</option>
+                        <option value="couples">Couples</option>
+                        <option value="families">Families</option>
                     </select>
                 </div>
 
@@ -132,7 +123,7 @@
             </div>
 
             <div class="results-count">
-                Showing <span id="results-number">35</span> bars & clubs
+                Showing <span id="results-number">5</span> beaches
             </div>
         </div>
     </section>
@@ -140,12 +131,17 @@
     <!-- Listings Grid -->
     <section class="listings-section">
         <div class="container">
+            <!-- Must-See Beaches Sub-Section -->
+            <div class="section-divider">
+                <h2 class="section-title">Must-See Beaches</h2>
+            </div>
+
             <div class="listings-grid" id="listings-grid">
-                <!-- Listing Item 1 -->
-                <div class="listing-card" data-location="kampi" data-price="moderate" data-type="sunset">
+                <!-- Beach 1: Navagio (Shipwreck Beach) -->
+                <div class="listing-card" data-location="volimes" data-price="budget" data-type="must-see" data-ideal="couples">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=600&q=80" alt="Sunset Taverna Kampi" loading="lazy">
-                        <div class="listing-badge top-rated">☀️ Best Sunset</div>
+                        <img src="https://images.unsplash.com/photo-1590523278191-995cbcda646b?w=600&q=80" alt="Navagio Shipwreck Beach" loading="lazy">
+                        <div class="listing-badge top-rated">Top Rated</div>
                         <button class="favorite-btn" aria-label="Add to favorites">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -154,99 +150,7 @@
                     </div>
                     <div class="listing-content">
                         <div class="listing-header">
-                            <h3 class="listing-title">Sunset Taverna Kampi</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
-                                </svg>
-                                <span>4.8</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Sunset Bar & Restaurant</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Kampi Village</span>
-                        </div>
-                        <p class="listing-description">The most spectacular sunset view on the island. Watch the sun dip into the Ionian Sea from dramatic cliffs while enjoying craft cocktails.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Sunset Views</span>
-                            <span class="highlight-tag">Cocktails</span>
-                            <span class="highlight-tag">Romantic</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=101" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 2 -->
-                <div class="listing-card" data-location="laganas" data-price="moderate" data-type="nightclub">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=600&q=80" alt="Rescue Club" loading="lazy">
-                        <div class="listing-badge local-favorite">🔥 Party Central</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Rescue Club</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
-                                </svg>
-                                <span>4.7</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Mega Nightclub</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Laganas</span>
-                        </div>
-                        <p class="listing-description">Legendary nightclub in the heart of Laganas strip. International DJs, massive dance floors, and unforgettable parties until dawn.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Live DJs</span>
-                            <span class="highlight-tag">Dance Floor</span>
-                            <span class="highlight-tag">Late Night</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=102" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 3 -->
-                <div class="listing-card" data-location="zakynthos-town" data-price="upscale" data-type="cocktail">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80" alt="The Windmill Cocktail Bar" loading="lazy">
-                        <div class="listing-badge best-value">🍸 Top Rated</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">The Windmill Cocktail Bar</h3>
+                            <h3 class="listing-title">Navagio (Shipwreck Beach)</h3>
                             <div class="listing-rating">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
@@ -254,22 +158,72 @@
                                 <span>4.9</span>
                             </div>
                         </div>
-                        <div class="listing-type">Premium Cocktail Bar</div>
+                        <div class="listing-type">Iconic Landmark Beach</div>
                         <div class="listing-location">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Zakynthos Town</span>
+                            <span>Volimes, Northwest Coast</span>
                         </div>
-                        <p class="listing-description">Sophisticated rooftop bar with harbor views. Expert mixologists crafting unique cocktails using local ingredients and premium spirits.</p>
+                        <p class="listing-description">The most photographed beach in Greece. Pristine white pebbles surround the famous shipwreck, enclosed by dramatic limestone cliffs rising 200 meters. Crystal-clear turquoise waters make this a once-in-a-lifetime destination. Accessible only by boat, maintaining its untouched natural beauty.</p>
+
+                        <!-- Beach-specific information -->
+                        <div class="listing-details">
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>When to go:</strong> Morning before 11am or late afternoon after 4pm to avoid crowds</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M3 10H21M7 6V3M17 6V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>Parking:</strong> Park at Porto Vromi, then take boat tour (15 minutes)</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span><strong>Ideal for:</strong> Couples</span>
+                            </div>
+                        </div>
+
+                        <!-- Special Navagio tips -->
+                        <div class="listing-tips">
+                            <div class="tip-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span>Viewpoint accessible by car offers stunning photography without boat trip</span>
+                            </div>
+                            <div class="tip-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span>Beach access closed from sunset to sunrise for safety reasons</span>
+                            </div>
+                            <div class="tip-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span>No facilities on beach - bring water, sun protection, and essentials</span>
+                            </div>
+                        </div>
+
                         <div class="listing-highlights">
-                            <span class="highlight-tag">Craft Cocktails</span>
-                            <span class="highlight-tag">Rooftop</span>
-                            <span class="highlight-tag">Sea View</span>
+                            <span class="highlight-tag">Iconic Shipwreck</span>
+                            <span class="highlight-tag">Crystal Waters</span>
+                            <span class="highlight-tag">Photo Worthy</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">€€€</div>
-                            <a href="zantelocals-listing.html?id=103" class="btn-view-details">
+                            <div class="listing-price">€</div>
+                            <a href="zantelocals-listing.html?id=201" class="btn-view-details">
                                 View Details
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -279,11 +233,11 @@
                     </div>
                 </div>
 
-                <!-- Listing Item 4 -->
-                <div class="listing-card" data-location="tsilivi" data-price="moderate" data-type="beach">
+                <!-- Beach 2: Porto Limnionas -->
+                <div class="listing-card" data-location="porto-vromi" data-price="budget" data-type="must-see" data-ideal="couples">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80" alt="Paradise Beach Bar" loading="lazy">
-                        <div class="listing-badge local-favorite">🏖️ Beach Vibes</div>
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80" alt="Porto Limnionas" loading="lazy">
+                        <div class="listing-badge local-favorite">Local Favorite</div>
                         <button class="favorite-btn" aria-label="Add to favorites">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -292,7 +246,154 @@
                     </div>
                     <div class="listing-content">
                         <div class="listing-header">
-                            <h3 class="listing-title">Paradise Beach Bar</h3>
+                            <h3 class="listing-title">Porto Limnionas</h3>
+                            <div class="listing-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                                </svg>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <div class="listing-type">Rocky Cove Beach</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>West Coast near Agios Leon</span>
+                        </div>
+                        <p class="listing-description">A hidden natural inlet with dramatic rock formations creating a stunning lagoon-like swimming area. Deep emerald waters perfect for snorkeling and cliff jumping. Traditional taverna on-site serves fresh seafood with spectacular sunset views over the Ionian Sea.</p>
+
+                        <div class="listing-details">
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>When to go:</strong> Afternoon through sunset for best light and swimming conditions</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M3 10H21M7 6V3M17 6V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>Parking:</strong> Free parking area, short walk down rocky path to cove</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span><strong>Ideal for:</strong> Couples</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Snorkeling</span>
+                            <span class="highlight-tag">Taverna</span>
+                            <span class="highlight-tag">Cliff Jumping</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">€</div>
+                            <a href="zantelocals-listing.html?id=202" class="btn-view-details">
+                                View Details
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beach 3: Porto Roxa -->
+                <div class="listing-card" data-location="porto-vromi" data-price="budget" data-type="must-see" data-ideal="couples">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Porto Roxa" loading="lazy">
+                        <div class="listing-badge best-value">Best Value</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Porto Roxa</h3>
+                            <div class="listing-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                                </svg>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <div class="listing-type">Secluded Rocky Beach</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>West Coast near Limnionas</span>
+                        </div>
+                        <p class="listing-description">A tranquil rocky inlet nestled between towering cliffs, offering exceptional privacy and natural beauty. Deep blue waters ideal for swimming and exploring underwater caves. Small family-run taverna provides authentic Greek hospitality and home-cooked meals.</p>
+
+                        <div class="listing-details">
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>When to go:</strong> Late morning to mid-afternoon for optimal sunlight in the cove</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M3 10H21M7 6V3M17 6V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>Parking:</strong> Small parking area near taverna, steep stairs to beach</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span><strong>Ideal for:</strong> Couples</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Secluded</span>
+                            <span class="highlight-tag">Authentic Taverna</span>
+                            <span class="highlight-tag">Cave Swimming</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">€</div>
+                            <a href="zantelocals-listing.html?id=203" class="btn-view-details">
+                                View Details
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden / Local Beaches Sub-Section -->
+            <div class="section-divider">
+                <h2 class="section-title">Hidden / Local Beaches</h2>
+            </div>
+
+            <div class="listings-grid">
+                <!-- Beach 4: Filipaki Beach -->
+                <div class="listing-card" data-location="southeast" data-price="budget" data-type="hidden" data-ideal="families">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=600&q=80" alt="Filipaki Beach" loading="lazy">
+                        <div class="listing-badge local-favorite">Hidden Gem</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Filipaki Beach</h3>
                             <div class="listing-rating">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
@@ -300,22 +401,46 @@
                                 <span>4.6</span>
                             </div>
                         </div>
-                        <div class="listing-type">Beach Bar & Lounge</div>
+                        <div class="listing-type">Quiet Sandy Beach</div>
                         <div class="listing-location">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Tsilivi Beach</span>
+                            <span>Southeast Coast near Vassilikos</span>
                         </div>
-                        <p class="listing-description">Laid-back beach bar right on the sand. Perfect spot for day drinking, beach parties, and watching the sunset with your toes in the water.</p>
+                        <p class="listing-description">A peaceful stretch of golden sand favored by local families. Shallow, calm waters make it perfect for children and those seeking a relaxed atmosphere. Natural shade from olive trees along the shoreline. No commercial development preserves its authentic character.</p>
+
+                        <div class="listing-details">
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>When to go:</strong> Morning through early afternoon, quietest on weekdays</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M3 10H21M7 6V3M17 6V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>Parking:</strong> Limited roadside parking, arrive early during peak season</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span><strong>Ideal for:</strong> Families</span>
+                            </div>
+                        </div>
+
                         <div class="listing-highlights">
-                            <span class="highlight-tag">Beachfront</span>
-                            <span class="highlight-tag">Chill Vibes</span>
-                            <span class="highlight-tag">Live Music</span>
+                            <span class="highlight-tag">Shallow Waters</span>
+                            <span class="highlight-tag">Natural Shade</span>
+                            <span class="highlight-tag">Peaceful</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=104" class="btn-view-details">
+                            <div class="listing-price">€</div>
+                            <a href="zantelocals-listing.html?id=204" class="btn-view-details">
                                 View Details
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -325,11 +450,11 @@
                     </div>
                 </div>
 
-                <!-- Listing Item 5 -->
-                <div class="listing-card" data-location="argassi" data-price="budget" data-type="party">
+                <!-- Beach 5: Dafni (Quiet Side) -->
+                <div class="listing-card" data-location="southeast" data-price="budget" data-type="hidden" data-ideal="families">
                     <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80" alt="Barrage Music Bar" loading="lazy">
-                        <div class="listing-badge best-value">💰 Best Value</div>
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="Dafni Beach" loading="lazy">
+                        <div class="listing-badge best-value">Protected Beach</div>
                         <button class="favorite-btn" aria-label="Add to favorites">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -338,7 +463,7 @@
                     </div>
                     <div class="listing-content">
                         <div class="listing-header">
-                            <h3 class="listing-title">Barrage Music Bar</h3>
+                            <h3 class="listing-title">Dafni Beach (Quiet Side)</h3>
                             <div class="listing-rating">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
@@ -346,22 +471,46 @@
                                 <span>4.5</span>
                             </div>
                         </div>
-                        <div class="listing-type">Party Bar</div>
+                        <div class="listing-type">Protected Sandy Beach</div>
                         <div class="listing-location">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Argassi</span>
+                            <span>Southeast Coast, Vassilikos Peninsula</span>
                         </div>
-                        <p class="listing-description">Lively music bar with great drink deals and energetic atmosphere. Popular with locals and tourists alike for pre-club drinks and good times.</p>
+                        <p class="listing-description">Part of the National Marine Park protecting Caretta-Caretta sea turtle nesting sites. Soft golden sand and gentle waves create ideal conditions for families. Minimal facilities maintain the natural environment. Visitors may witness turtle nesting activity from June through August, offering a unique educational experience.</p>
+
+                        <div class="listing-details">
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>When to go:</strong> Early morning or late afternoon, especially June-August for turtle activity</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M3 10H21M7 6V3M17 6V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>Parking:</strong> Designated parking area with easy beach access via boardwalk</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span><strong>Ideal for:</strong> Families</span>
+                            </div>
+                        </div>
+
                         <div class="listing-highlights">
-                            <span class="highlight-tag">Happy Hour</span>
-                            <span class="highlight-tag">Sports TV</span>
-                            <span class="highlight-tag">Pool Table</span>
+                            <span class="highlight-tag">Turtle Nesting</span>
+                            <span class="highlight-tag">Protected Area</span>
+                            <span class="highlight-tag">Gentle Waves</span>
                         </div>
                         <div class="listing-footer">
                             <div class="listing-price">€</div>
-                            <a href="zantelocals-listing.html?id=105" class="btn-view-details">
+                            <a href="zantelocals-listing.html?id=205" class="btn-view-details">
                                 View Details
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -370,243 +519,12 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Listing Item 6 -->
-                <div class="listing-card" data-location="alykanas" data-price="moderate" data-type="lounge">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" alt="Seaside Lounge" loading="lazy">
-                        <div class="listing-badge local-favorite">❤️ Local Favorite</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Seaside Lounge Bar</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
-                                </svg>
-                                <span>4.7</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Lounge & Cocktail Bar</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Alykanas</span>
-                        </div>
-                        <p class="listing-description">Elegant waterfront lounge with plush seating and ambient lighting. Perfect for a sophisticated evening with signature cocktails and smooth music.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Waterfront</span>
-                            <span class="highlight-tag">Elegant</span>
-                            <span class="highlight-tag">Signature Drinks</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=106" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 7 -->
-                <div class="listing-card" data-location="laganas" data-price="budget" data-type="party">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=600&q=80" alt="Cherry Bay" loading="lazy">
-                        <div class="listing-badge top-rated">🎉 Must Visit</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Cherry Bay</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
-                                </svg>
-                                <span>4.8</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Party Bar & Nightclub</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Laganas</span>
-                        </div>
-                        <p class="listing-description">Iconic Laganas party spot with pool parties, themed nights, and incredible atmosphere. Famous for wild nights and making memories.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Pool Parties</span>
-                            <span class="highlight-tag">Themed Nights</span>
-                            <span class="highlight-tag">Young Crowd</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€</div>
-                            <a href="zantelocals-listing.html?id=107" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 8 -->
-                <div class="listing-card" data-location="kalamaki" data-price="moderate" data-type="beach">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="Coral Beach Bar" loading="lazy">
-                        <div class="listing-badge local-favorite">🌊 Chill Vibes</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Coral Beach Bar</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
-                                </svg>
-                                <span>4.6</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Beach Bar</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Kalamaki Beach</span>
-                        </div>
-                        <p class="listing-description">Relaxed beach bar on beautiful Kalamaki beach. Great for daytime drinks, fresh juices, and watching the Caretta-Caretta turtles nearby.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Beachfront</span>
-                            <span class="highlight-tag">Family Friendly</span>
-                            <span class="highlight-tag">Smoothies</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=108" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 9 -->
-                <div class="listing-card" data-location="zakynthos-town" data-price="upscale" data-type="lounge">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1560963689-88bbee2762c1?w=600&q=80" alt="La Dolce Vita Lounge" loading="lazy">
-                        <div class="listing-badge best-value">✨ Premium</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">La Dolce Vita Lounge</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
-                                </svg>
-                                <span>4.9</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Luxury Lounge Bar</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Zakynthos Town Square</span>
-                        </div>
-                        <p class="listing-description">Upscale lounge in the heart of town with sophisticated ambiance. Premium cocktails, fine wines, and live jazz on weekends.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Live Jazz</span>
-                            <span class="highlight-tag">Premium Spirits</span>
-                            <span class="highlight-tag">Sophisticated</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€€</div>
-                            <a href="zantelocals-listing.html?id=109" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 10 -->
-                <div class="listing-card" data-location="laganas" data-price="moderate" data-type="nightclub">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1571266028243-d220c6650e44?w=600&q=80" alt="Factory Club" loading="lazy">
-                        <div class="listing-badge top-rated">🎵 Top Rated</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Factory Club</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
-                                </svg>
-                                <span>4.7</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Nightclub</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Laganas Strip</span>
-                        </div>
-                        <p class="listing-description">Multi-level nightclub with different music zones. EDM, house, and Greek music across three floors. Open until sunrise.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">3 Floors</span>
-                            <span class="highlight-tag">VIP Tables</span>
-                            <span class="highlight-tag">Until Dawn</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=110" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
             <!-- Load More Button -->
             <div class="load-more-container">
                 <button class="btn btn-outline btn-large" id="load-more">
-                    Load More Bars
+                    Load More Beaches
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 5V19M5 12L12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -619,8 +537,8 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Planning Your Night Out?</h2>
-                <p class="cta-subtitle">Get in touch and we'll help you plan the perfect Zakynthos nightlife experience</p>
+                <h2 class="cta-title">Planning Your Perfect Beach Day?</h2>
+                <p class="cta-subtitle">Get personalized beach recommendations and insider tips for your Zakynthos visit</p>
                 <a href="zantelocals-contact.html" class="btn btn-primary btn-large">
                     <span>Contact Us</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -716,11 +634,12 @@
             </svg>
             <span>Home</span>
         </a>
-        <a href="zantelocals-bars.html" class="mobile-nav-item active">
+        <a href="zantelocals-beaches.html" class="mobile-nav-item active">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 3V7M5 7L3 21H11L9 7M5 7H9M15 3V17C15 17.5304 15.2107 18.0391 15.5858 18.4142C15.9609 18.7893 16.4696 19 17 19C17.5304 19 18.0391 18.7893 18.4142 18.4142C18.7893 18.0391 19 17.5304 19 17V3" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 2V6M12 18V22M22 12H18M6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
-            <span>Nightlife</span>
+            <span>Beaches</span>
         </a>
         <a href="zantelocals-experiences.html" class="mobile-nav-item">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

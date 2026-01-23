@@ -595,3 +595,75 @@
         bottom: 2rem;
     }
 }
+
+/* ===================================
+   Beach-Specific Components
+   =================================== */
+.section-divider {
+    margin: var(--spacing-3xl) 0 var(--spacing-xl) 0;
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid rgba(45, 139, 95, 0.15);
+}
+
+.section-divider .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 0;
+}
+
+.listing-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    background-color: var(--light-gray);
+    border-radius: var(--radius-md);
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+.detail-item svg {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    color: var(--primary-green);
+}
+
+.detail-item strong {
+    font-weight: 600;
+    color: var(--almost-black);
+}
+
+.listing-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    background-color: rgba(255, 184, 77, 0.08);
+    border-left: 3px solid var(--accent-yellow);
+    border-radius: var(--radius-sm);
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+.tip-item svg {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    color: var(--accent-yellow);
+}
