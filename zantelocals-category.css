@@ -539,14 +539,14 @@
     right: 1.5rem;
     width: 52px;
     height: 52px;
-    background-color: #3B9B8F;
-    background: linear-gradient(135deg, #3B9B8F 0%, #5FB3A7 100%);
+    background-color: var(--primary-green);
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-light) 100%);
     color: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(59, 155, 143, 0.3);
+    box-shadow: 0 4px 16px rgba(45, 139, 95, 0.3);
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -563,7 +563,7 @@
 
 .scroll-to-top:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(59, 155, 143, 0.4);
+    box-shadow: 0 8px 24px rgba(45, 139, 95, 0.4);
 }
 
 .scroll-to-top:active {
