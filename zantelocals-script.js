@@ -323,6 +323,85 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===================================
+// Category Search Functionality
+// ===================================
+const categorySearchInput = document.getElementById('categorySearch');
+const searchClearBtn = document.getElementById('searchClear');
+const searchResultsCount = document.getElementById('searchResultsCount');
+const categoryCardsForSearch = document.querySelectorAll('.category-card');
+
+if (categorySearchInput && categoryCardsForSearch.length > 0) {
+    // Search function
+    const performSearch = () => {
+        const searchTerm = categorySearchInput.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        categoryCardsForSearch.forEach(card => {
+            const title = card.querySelector('.category-title')?.textContent.toLowerCase() || '';
+            const description = card.querySelector('.category-description')?.textContent.toLowerCase() || '';
+            const categoryData = card.dataset.category?.toLowerCase() || '';
+
+            // Check if search term matches title, description, or category data
+            const matches = title.includes(searchTerm) ||
+                          description.includes(searchTerm) ||
+                          categoryData.includes(searchTerm);
+
+            if (matches) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+        // Show/hide clear button
+        if (searchTerm.length > 0) {
+            searchClearBtn.style.display = 'flex';
+        } else {
+            searchClearBtn.style.display = 'none';
+        }
+
+        // Show results count
+        if (searchTerm.length > 0) {
+            searchResultsCount.style.display = 'block';
+            if (visibleCount === 0) {
+                searchResultsCount.textContent = 'No categories found';
+            } else if (visibleCount === categoryCardsForSearch.length) {
+                searchResultsCount.textContent = `Showing all ${visibleCount} categories`;
+            } else {
+                searchResultsCount.textContent = `Showing ${visibleCount} of ${categoryCardsForSearch.length} categories`;
+            }
+        } else {
+            searchResultsCount.style.display = 'none';
+        }
+    };
+
+    // Use debounce for better performance
+    const debouncedSearch = debounce(performSearch, 300);
+
+    // Add event listeners
+    categorySearchInput.addEventListener('input', debouncedSearch);
+
+    // Clear button functionality
+    if (searchClearBtn) {
+        searchClearBtn.addEventListener('click', () => {
+            categorySearchInput.value = '';
+            categorySearchInput.focus();
+            performSearch();
+        });
+    }
+
+    // Clear search on Escape key
+    categorySearchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            categorySearchInput.value = '';
+            performSearch();
+            categorySearchInput.blur();
+        }
+    });
+}
+
+// ===================================
 // Export functions for use in other files
 // ===================================
 window.ZanteLocals = {

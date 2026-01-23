@@ -147,6 +147,28 @@
                 <p class="section-subtitle">Find the best of Zakynthos, handpicked by locals who know the island best</p>
             </div>
 
+            <!-- Category Search -->
+            <div class="category-search-container">
+                <div class="category-search-wrapper">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <input
+                        type="text"
+                        id="categorySearch"
+                        class="category-search-input"
+                        placeholder="Search categories..."
+                        aria-label="Search categories"
+                    >
+                    <button class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="search-results-count" id="searchResultsCount" style="display: none;"></div>
+            </div>
+
             <div class="categories-grid">
                 <!-- Category 1: Restaurants -->
                 <a href="zantelocals-restaurants.html" class="category-card" data-category="restaurants">
