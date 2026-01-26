@@ -343,26 +343,29 @@ if (categorySearch) {
         if (searchTerm === '') {
             // Reset all cards and collapse grid
             categoryCardsAll.forEach(card => {
-                card.classList.remove('dimmed', 'highlight');
+                card.classList.remove('dimmed', 'highlight', 'search-match');
             });
             // Collapse grid when search is cleared
-            if (grid) grid.classList.remove('expanded');
+            if (grid) grid.classList.remove('expanded', 'searching');
             if (showMoreButton) {
                 showMoreButton.classList.remove('expanded');
+                showMoreButton.style.display = '';
                 const textSpan = showMoreButton.querySelector('.show-more-text');
                 if (textSpan) textSpan.textContent = 'Show More Categories';
             }
             return;
         }
 
-        // Expand grid to show all categories when searching
-        if (grid) grid.classList.add('expanded');
+        // Mark grid as searching and expand to show all categories
+        if (grid) {
+            grid.classList.add('expanded', 'searching');
+        }
+        // Hide show more button while searching
         if (showMoreButton) {
-            showMoreButton.classList.add('expanded');
-            const textSpan = showMoreButton.querySelector('.show-more-text');
-            if (textSpan) textSpan.textContent = 'Show Less';
+            showMoreButton.style.display = 'none';
         }
 
+        let hasMatches = false;
         categoryCardsAll.forEach(card => {
             const title = card.querySelector('.category-title')?.textContent.toLowerCase() || '';
             const description = card.querySelector('.category-description')?.textContent.toLowerCase() || '';
@@ -373,16 +376,17 @@ if (categorySearch) {
                            category.includes(searchTerm);
 
             if (matches) {
+                hasMatches = true;
                 card.classList.remove('dimmed');
-                card.classList.add('highlight');
+                card.classList.add('search-match', 'highlight');
                 // Remove highlight class after animation
                 setTimeout(() => card.classList.remove('highlight'), 600);
             } else {
                 card.classList.add('dimmed');
-                card.classList.remove('highlight');
+                card.classList.remove('highlight', 'search-match');
             }
         });
-    }, 200));
+    }, 150));
 
     // Clear search
     if (searchClear) {
@@ -393,12 +397,13 @@ if (categorySearch) {
             categorySearch.value = '';
             searchClear.classList.remove('visible');
             categoryCardsAll.forEach(card => {
-                card.classList.remove('dimmed', 'highlight');
+                card.classList.remove('dimmed', 'highlight', 'search-match');
             });
             // Collapse grid when search is cleared
-            if (grid) grid.classList.remove('expanded');
+            if (grid) grid.classList.remove('expanded', 'searching');
             if (showMoreButton) {
                 showMoreButton.classList.remove('expanded');
+                showMoreButton.style.display = '';
                 const textSpan = showMoreButton.querySelector('.show-more-text');
                 if (textSpan) textSpan.textContent = 'Show More Categories';
             }

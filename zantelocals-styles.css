@@ -770,16 +770,22 @@ section {
 /* Category card highlight when searched */
 .category-card.highlight {
     animation: pulse-highlight 0.6s ease;
+    box-shadow: 0 0 0 3px var(--primary-teal), var(--shadow-lg);
 }
 
 .category-card.dimmed {
-    opacity: 0.3;
-    transform: scale(0.98);
+    display: none !important;
+}
+
+.category-card.search-match {
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 @keyframes pulse-highlight {
-    0%, 100% { box-shadow: var(--shadow-sm); }
-    50% { box-shadow: 0 0 0 4px rgba(59, 155, 143, 0.3), var(--shadow-lg); }
+    0%, 100% { box-shadow: 0 0 0 3px var(--primary-teal), var(--shadow-sm); }
+    50% { box-shadow: 0 0 0 5px var(--primary-teal), var(--shadow-lg); }
 }
 
 .categories-grid {
