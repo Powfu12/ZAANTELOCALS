@@ -1,0 +1,537 @@
+/* ===================================
+   ZanteLocals - Experiences Page CSS
+   Warm Sunset Orange / Coral Theme
+   =================================== */
+
+/* ===================================
+   Boat Loading Screen
+   =================================== */
+.experiences-loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FF8C42 0%, #E85D04 50%, #DC2F02 100%);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.experiences-loading-screen.hidden {
+    transform: translateX(100%);
+}
+
+/* Ocean Background */
+.boat-loader {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sea/Ocean Waves at Bottom */
+.sea-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    overflow: hidden;
+}
+
+.sea-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+}
+
+.sea-wave svg {
+    width: 100%;
+    height: 100%;
+}
+
+.sea-wave-1 {
+    animation: sea-drift 4s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.sea-wave-2 {
+    animation: sea-drift 3s ease-in-out infinite reverse;
+    opacity: 0.5;
+}
+
+.sea-wave-3 {
+    animation: sea-drift 2.5s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+@keyframes sea-drift {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+}
+
+/* Speedboat Container */
+.speedboat-container {
+    position: absolute;
+    bottom: 28%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: boat-rock 1.5s ease-in-out infinite;
+}
+
+@keyframes boat-rock {
+    0%, 100% {
+        transform: translateX(-50%) rotate(-2deg) translateY(0);
+    }
+    25% {
+        transform: translateX(-50%) rotate(1deg) translateY(-5px);
+    }
+    50% {
+        transform: translateX(-50%) rotate(2deg) translateY(-2px);
+    }
+    75% {
+        transform: translateX(-50%) rotate(-1deg) translateY(-8px);
+    }
+}
+
+/* SVG Speedboat */
+.speedboat {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* Water Spray Behind Boat */
+.water-spray {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 60px;
+}
+
+.spray-particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: spray 0.8s ease-out infinite;
+}
+
+.spray-particle:nth-child(1) {
+    width: 8px;
+    height: 8px;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.spray-particle:nth-child(2) {
+    width: 6px;
+    height: 6px;
+    left: 35%;
+    animation-delay: 0.1s;
+}
+
+.spray-particle:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    animation-delay: 0.05s;
+}
+
+.spray-particle:nth-child(4) {
+    width: 5px;
+    height: 5px;
+    left: 65%;
+    animation-delay: 0.15s;
+}
+
+.spray-particle:nth-child(5) {
+    width: 7px;
+    height: 7px;
+    left: 80%;
+    animation-delay: 0.08s;
+}
+
+@keyframes spray {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-40px) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* Wake Lines Behind Boat */
+.wake-lines {
+    position: absolute;
+    bottom: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 40px;
+}
+
+.wake-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: none;
+    border-top: 3px solid rgba(255, 255, 255, 0.6);
+    animation: wake-expand 1s ease-out infinite;
+}
+
+.wake-line:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.wake-line:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.wake-line:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes wake-expand {
+    0% {
+        width: 20px;
+        opacity: 0.8;
+        bottom: 20px;
+    }
+    100% {
+        width: 150px;
+        opacity: 0;
+        bottom: -20px;
+    }
+}
+
+/* Loader Text Content */
+.experiences-loader-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.loader-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.loader-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+/* Loading Dots */
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2rem;
+}
+
+.loading-dot {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    animation: dot-bounce 1.4s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loading-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dot-bounce {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Sun Element */
+.sun-element {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #FFD700 0%, #FFA500 50%, transparent 70%);
+    border-radius: 50%;
+    animation: sun-pulse 3s ease-in-out infinite;
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes sun-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 80px rgba(255, 215, 0, 0.7);
+    }
+}
+
+/* ===================================
+   Experiences Header
+   =================================== */
+.experiences-header {
+    background: linear-gradient(135deg, #FF8C42 0%, #E85D04 50%, #DC2F02 100%);
+}
+
+.experiences-header .header-overlay {
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 140, 66, 0.25) 0%, transparent 50%);
+}
+
+/* ===================================
+   Experience Type Badges
+   =================================== */
+.experience-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.experience-type.boat-tour {
+    background: linear-gradient(135deg, #0891b2, #0e7490);
+    color: white;
+}
+
+.experience-type.adventure {
+    background: linear-gradient(135deg, #FF8C42, #E85D04);
+    color: white;
+}
+
+.experience-type.cultural {
+    background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+    color: white;
+}
+
+.experience-type.nature {
+    background: linear-gradient(135deg, #2D8B5F, #1F6B47);
+    color: white;
+}
+
+.experience-type.water-sports {
+    background: linear-gradient(135deg, #06B6D4, #0891B2);
+    color: white;
+}
+
+/* ===================================
+   Duration & Price Badges
+   =================================== */
+.experience-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin: var(--spacing-sm) 0;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    color: var(--medium-gray);
+}
+
+.meta-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--accent-orange);
+}
+
+.meta-item.price {
+    font-weight: 600;
+    color: var(--accent-orange);
+}
+
+/* ===================================
+   Highlights Section
+   =================================== */
+.experience-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: var(--spacing-sm) 0;
+}
+
+.highlight-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.625rem;
+    background-color: rgba(255, 140, 66, 0.1);
+    color: var(--accent-orange);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* ===================================
+   Category Sections
+   =================================== */
+.experience-category-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--light-sand);
+}
+
+.experience-category-section:nth-child(even) {
+    background-color: var(--white);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.category-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--almost-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.category-icon {
+    font-size: 1.1em;
+}
+
+.category-description {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   Featured Experience Card
+   =================================== */
+.featured-experience {
+    background: linear-gradient(135deg, #FF8C42 0%, #E85D04 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    color: white;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.featured-experience-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .featured-experience-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.featured-experience h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.featured-experience p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.featured-experience .btn {
+    background: white;
+    color: var(--accent-orange);
+}
+
+.featured-experience .btn:hover {
+    background: var(--light-sand);
+    transform: translateY(-2px);
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 767px) {
+    .loader-title {
+        font-size: 1.75rem;
+    }
+
+    .loader-subtitle {
+        font-size: 1rem;
+    }
+
+    .speedboat {
+        width: 140px;
+    }
+
+    .sun-element {
+        width: 60px;
+        height: 60px;
+        top: 10%;
+        right: 10%;
+    }
+
+    .experiences-loader-content {
+        top: 25%;
+    }
+
+    .category-title {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+}

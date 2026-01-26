@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the best experiences and tours in Zakynthos. Boat trips, adventures, and unforgettable activities recommended by locals.">
+    <title>Experiences & Tours - ZanteLocals</title>
+    <link rel="stylesheet" href="zantelocals-styles.css">
+    <link rel="stylesheet" href="zantelocals-category.css">
+    <link rel="stylesheet" href="zantelocals-experiences.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Speedboat Loading Screen -->
+    <div id="experiences-loading" class="experiences-loading-screen">
+        <div class="boat-loader">
+            <!-- Sun Element -->
+            <div class="sun-element"></div>
+
+            <!-- Loader Text -->
+            <div class="experiences-loader-content">
+                <div class="loader-title">Adventures Await</div>
+                <div class="loader-subtitle">Discovering Zakynthos Experiences</div>
+                <div class="loading-dots">
+                    <div class="loading-dot"></div>
+                    <div class="loading-dot"></div>
+                    <div class="loading-dot"></div>
+                </div>
+            </div>
+
+            <!-- Wake Lines -->
+            <div class="wake-lines">
+                <div class="wake-line"></div>
+                <div class="wake-line"></div>
+                <div class="wake-line"></div>
+            </div>
+
+            <!-- Water Spray -->
+            <div class="water-spray">
+                <div class="spray-particle"></div>
+                <div class="spray-particle"></div>
+                <div class="spray-particle"></div>
+                <div class="spray-particle"></div>
+                <div class="spray-particle"></div>
+            </div>
+
+            <!-- Speedboat SVG -->
+            <div class="speedboat-container">
+                <svg class="speedboat" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Boat Hull -->
+                    <path d="M20 55 L40 65 L160 65 L180 55 L170 45 L30 45 Z" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+                    <!-- Hull Accent Line -->
+                    <path d="M35 52 L165 52" stroke="#FF8C42" stroke-width="3" stroke-linecap="round"/>
+                    <!-- Windshield -->
+                    <path d="M70 45 L75 25 L110 25 L115 45" fill="#87CEEB" stroke="#6B7280" stroke-width="2"/>
+                    <!-- Windshield Reflection -->
+                    <path d="M80 30 L85 28 L100 28 L105 30" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Cabin -->
+                    <rect x="65" y="35" width="55" height="10" rx="3" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+                    <!-- Captain Silhouette -->
+                    <circle cx="90" cy="38" r="4" fill="#374151"/>
+                    <!-- Motor -->
+                    <rect x="155" y="48" width="15" height="12" rx="2" fill="#374151"/>
+                    <!-- Motor Propeller Area -->
+                    <ellipse cx="175" cy="58" rx="8" ry="5" fill="#4B5563"/>
+                    <!-- Bow Rail -->
+                    <path d="M40 42 L60 42" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Flag -->
+                    <line x1="50" y1="45" x2="50" y2="28" stroke="#374151" stroke-width="2"/>
+                    <path d="M50 28 L65 33 L50 38" fill="#FF8C42"/>
+                </svg>
+            </div>
+
+            <!-- Sea Waves -->
+            <div class="sea-container">
+                <div class="sea-wave sea-wave-1">
+                    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                        <path fill="rgba(255,255,255,0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L0,320Z"></path>
+                    </svg>
+                </div>
+                <div class="sea-wave sea-wave-2">
+                    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                        <path fill="rgba(255,255,255,0.4)" d="M0,256L48,261.3C96,267,192,277,288,272C384,267,480,245,576,224C672,203,768,181,864,186.7C960,192,1056,224,1152,218.7C1248,213,1344,171,1392,149.3L1440,128L1440,320L0,320Z"></path>
+                    </svg>
+                </div>
+                <div class="sea-wave sea-wave-3">
+                    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                        <path fill="rgba(255,255,255,0.5)" d="M0,288L48,282.7C96,277,192,267,288,261.3C384,256,480,256,576,261.3C672,267,768,277,864,272C960,267,1056,245,1152,240C1248,235,1344,245,1392,250.7L1440,256L1440,320L0,320Z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-zante">Zante</span><span class="logo-locals">Locals</span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="zantelocals-beaches.html" class="nav-link">Beaches</a></li>
+                    <li><a href="zantelocals-restaurants.html" class="nav-link">Restaurants</a></li>
+                    <li><a href="zantelocals-bars.html" class="nav-link">Bars</a></li>
+                    <li><a href="zantelocals-experiences.html" class="nav-link active">Experiences</a></li>
+                </ul>
+
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header experiences-header">
+        <div class="header-background">
+            <div class="header-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Experiences</span>
+                </div>
+                <h1 class="page-title">
+                    <span class="title-icon">🚤</span>
+                    Experiences & Tours
+                </h1>
+                <p class="page-subtitle">Unforgettable adventures on land and sea. Boat trips, excursions, and authentic Zakynthos experiences</p>
+                <div class="page-stats">
+                    <span class="stat">50+ Activities</span>
+                    <span class="stat-divider">•</span>
+                    <span class="stat">Boat Tours</span>
+                    <span class="stat-divider">•</span>
+                    <span class="stat">Local Guides</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="filter-group">
+                    <label class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Category
+                    </label>
+                    <select class="filter-select" id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="boat">Boat Tours</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="cultural">Cultural</option>
+                        <option value="nature">Nature</option>
+                        <option value="water-sports">Water Sports</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Duration
+                    </label>
+                    <select class="filter-select" id="duration-filter">
+                        <option value="all">Any Duration</option>
+                        <option value="half-day">Half Day (2-4h)</option>
+                        <option value="full-day">Full Day (6-8h)</option>
+                        <option value="multi-day">Multi-Day</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1V23M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Price
+                    </label>
+                    <select class="filter-select" id="price-filter">
+                        <option value="all">Any Price</option>
+                        <option value="budget">Budget (Under €30)</option>
+                        <option value="mid">Mid-Range (€30-€60)</option>
+                        <option value="premium">Premium (€60+)</option>
+                    </select>
+                </div>
+
+                <button class="filter-reset" id="reset-filters">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M21 3V8H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Reset
+                </button>
+            </div>
+
+            <div class="results-count">
+                Showing <span id="results-number">12</span> experiences
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Experience -->
+    <section class="experience-category-section">
+        <div class="container">
+            <div class="featured-experience">
+                <div class="featured-experience-content">
+                    <div>
+                        <span class="experience-type boat-tour">Most Popular</span>
+                        <h3>Shipwreck Beach & Blue Caves Tour</h3>
+                        <p>The ultimate Zakynthos experience! Visit the iconic Navagio Beach, swim in the magical Blue Caves, and discover hidden coves along the coastline. A full day of adventure with lunch included.</p>
+                        <div class="experience-meta">
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                                Full Day (8 hours)
+                            </span>
+                            <span class="meta-item price">From €55/person</span>
+                        </div>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                    <div style="text-align: center; font-size: 8rem;">🚢</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boat Tours Section -->
+    <section class="experience-category-section">
+        <div class="container">
+            <div class="category-header">
+                <h2 class="category-title">
+                    <span class="category-icon">⛵</span>
+                    Boat Tours
+                </h2>
+                <p class="category-description">Explore Zakynthos from the sea. Crystal clear waters, hidden beaches, and unforgettable views</p>
+            </div>
+
+            <div class="listings-grid">
+                <!-- Experience 1 -->
+                <article class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80" alt="Blue Caves Tour" loading="lazy">
+                        <span class="listing-badge">Best Seller</span>
+                    </div>
+                    <div class="listing-content">
+                        <span class="experience-type boat-tour">Boat Tour</span>
+                        <h3 class="listing-title">Blue Caves Exploration</h3>
+                        <p class="listing-description">Discover the magical Blue Caves with their stunning azure waters. Swim through natural arches and witness the incredible light effects.</p>
+                        <div class="experience-meta">
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                                3 hours
+                            </span>
+                            <span class="meta-item price">€35/person</span>
+                        </div>
+                        <div class="experience-highlights">
+                            <span class="highlight-tag">Swimming</span>
+                            <span class="highlight-tag">Photography</span>
+                            <span class="highlight-tag">Snorkeling</span>
+                        </div>
+                        <a href="#" class="btn-link">
+                            Book Now
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Experience 2 -->
+                <article class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80" alt="Sunset Cruise" loading="lazy">
+                        <span class="listing-badge">Romantic</span>
+                    </div>
+                    <div class="listing-content">
+                        <span class="experience-type boat-tour">Boat Tour</span>
+                        <h3 class="listing-title">Sunset Cruise</h3>
+                        <p class="listing-description">Watch the sun dip into the Ionian Sea on a romantic evening cruise. Includes wine, snacks, and live music.</p>
+                        <div class="experience-meta">
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                                2.5 hours
+                            </span>
+                            <span class="meta-item price">€45/person</span>
+                        </div>
+                        <div class="experience-highlights">
+                            <span class="highlight-tag">Wine Included</span>
+                            <span class="highlight-tag">Live Music</span>
+                        </div>
+                        <a href="#" class="btn-link">
+                            Book Now
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Experience 3 -->
+                <article class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Private Yacht Charter" loading="lazy">
+                        <span class="listing-badge">Premium</span>
+                    </div>
+                    <div class="listing-content">
+                        <span class="experience-type boat-tour">Boat Tour</span>
+                        <h3 class="listing-title">Private Yacht Charter</h3>
+                        <p class="listing-description">Your own private yacht with captain for the day. Create your perfect itinerary and explore at your own pace.</p>
+                        <div class="experience-meta">
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                                Full Day
+                            </span>
+                            <span class="meta-item price">From €400</span>
+                        </div>
+                        <div class="experience-highlights">
+                            <span class="highlight-tag">Private</span>
+                            <span class="highlight-tag">Customizable</span>
+                            <span class="highlight-tag">Lunch Included</span>
+                        </div>
+                        <a href="#" class="btn-link">
+                            Book Now
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adventure Section -->
+    <section class="experience-category-section">
+        <div class="container">
+            <div class="category-header">
+                <h2 class="category-title">
+                    <span class="category-icon">🏄</span>
+                    Water Sports & Adventure
+                </h2>
+                <p class="category-description">Get your adrenaline pumping with exciting water sports and outdoor adventures</p>
+            </div>
+
+            <div class="listings-grid">
+                <!-- Experience 4 -->
+                <article class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&q=80" alt="Jet Ski Safari" loading="lazy">
+                        <span class="listing-badge">Thrilling</span>
+                    </div>
+                    <div class="listing-content">
+                        <span class="experience-type water-sports">Water Sports</span>
+                        <h3 class="listing-title">Jet Ski Safari</h3>
+                        <p class="listing-description">Ride along the coastline on a guided jet ski tour. Visit sea caves, hidden beaches, and feel the rush of the open water.</p>
+                        <div class="experience-meta">
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                                1.5 hours
+                            </span>
+                            <span class="meta-item price">€85/person</span>
+                        </div>
+                        <div class="experience-highlights">
+                            <span class="highlight-tag">Guided</span>
+                            <span class="highlight-tag">No License Needed</span>
+                        </div>
+                        <a href="#" class="btn-link">
+                            Book Now
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Experience 5 -->
+                <article class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-92ab472cad5d?w=800&q=80" alt="Scuba Diving" loading="lazy">
+                        <span class="listing-badge">Underwater</span>
+                    </div>
+                    <div class="listing-content">
+                        <span class="experience-type water-sports">Water Sports</span>
+                        <h3 class="listing-title">Discover Scuba Diving</h3>
+                        <p class="listing-description">First time diving? Try scuba with certified instructors in crystal clear waters. See colorful fish and underwater caves.</p>
+                        <div class="experience-meta">
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                                3 hours
+                            </span>
+                            <span class="meta-item price">€75/person</span>
+                        </div>
+                        <div class="experience-highlights">
+                            <span class="highlight-tag">Beginners Welcome</span>
+                            <span class="highlight-tag">Equipment Included</span>
+                        </div>
+                        <a href="#" class="btn-link">
+                            Book Now
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Experience 6 -->
+                <article class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1499424017652-b64b2dc1cf04?w=800&q=80" alt="Kayak Tour" loading="lazy">
+                        <span class="listing-badge">Eco-Friendly</span>
+                    </div>
+                    <div class="listing-content">
+                        <span class="experience-type nature">Nature</span>
+                        <h3 class="listing-title">Sea Kayak Adventure</h3>
+                        <p class="listing-description">Paddle through sea caves and along pristine coastline. A peaceful way to explore hidden spots inaccessible by larger boats.</p>
+                        <div class="experience-meta">
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                                4 hours
+                            </span>
+                            <span class="meta-item price">€45/person</span>
+                        </div>
+                        <div class="experience-highlights">
+                            <span class="highlight-tag">Small Groups</span>
+                            <span class="highlight-tag">Snacks Included</span>
+                        </div>
+                        <a href="#" class="btn-link">
+                            Book Now
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background: linear-gradient(135deg, #FF8C42 0%, #DC2F02 100%);">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready for Adventure?</h2>
+                <p class="cta-subtitle">Book your Zakynthos experience today and create memories that last a lifetime</p>
+                <a href="zantelocals-contact.html" class="btn btn-primary btn-large" style="background: white; color: #E85D04;">
+                    <span>Contact Us</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-zante">Zante</span><span class="logo-locals">Locals</span>
+                    </a>
+                    <p class="footer-description">
+                        Discover Zakynthos like a local. Trusted recommendations for an authentic island experience.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="zantelocals-beaches.html">Beaches</a></li>
+                        <li><a href="zantelocals-restaurants.html">Restaurants</a></li>
+                        <li><a href="zantelocals-bars.html">Bars</a></li>
+                        <li><a href="zantelocals-experiences.html">Experiences</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="zantelocals-about.html">About Us</a></li>
+                        <li><a href="zantelocals-contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ZanteLocals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="zantelocals-beaches.html" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9.5C7.5 19 5.5 18 4 16.5C2.5 15 2 13 2 11C2 9 3 7 4.5 6C6 5 8 5 9.5 5.5"/><path d="M2 22H22"/></svg>
+            <span>Beaches</span>
+        </a>
+        <a href="zantelocals-experiences.html" class="mobile-nav-item active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+            <span>Experiences</span>
+        </a>
+        <a href="zantelocals-contact.html" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z"/></svg>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="zantelocals-script.js"></script>
+    <script>
+        // Experiences page loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('experiences-loading');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                setTimeout(() => {
+                    loader.remove();
+                }, 1000);
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
