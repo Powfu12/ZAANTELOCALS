@@ -7,25 +7,27 @@
    CSS Variables & Reset
    =================================== */
 :root {
-    /* Primary Colors - Mediterranean Palette */
-    --primary-teal: #3B9B8F;
-    --primary-dark: #2A7368;
-    --primary-light: #5FB3A7;
-    --primary-lighter: #EBF5F3;
+    /* Primary Colors - Island Green */
+    --primary-green: #2D8B5F;
+    --primary-teal: #2D8B5F;
+    --primary-dark: #1F6B47;
+    --primary-light: #4CAF88;
+    --primary-lighter: #E8F5F0;
 
-    /* Mediterranean Accent Colors */
-    --accent-terracotta: #D97757;
-    --accent-sand: #E8DFD0;
-    --accent-ocean: #5FB3D3;
-    --accent-gold: #E5B66A;
+    /* Accent Colors - Sunset Tones */
+    --accent-orange: #FF8C42;
+    --accent-yellow: #FFB84D;
+    --accent-coral: #FF6B6B;
+    --accent-terracotta: #FF8C42;
+    --accent-gold: #FFB84D;
 
-    /* Neutral Colors - Warm and inviting */
+    /* Neutral Colors */
     --white: #FFFFFF;
-    --off-white: #FAFAF8;
-    --light-sand: #F5F1E8;
-    --medium-gray: #6B7280;
-    --dark-gray: #374151;
-    --almost-black: #1F2937;
+    --off-white: #F8F9FA;
+    --light-sand: #F8F9FA;
+    --medium-gray: #6C757D;
+    --dark-gray: #2C3E50;
+    --almost-black: #1A1A1A;
 
     /* Spacing - More generous */
     --spacing-xs: 0.5rem;
