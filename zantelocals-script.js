@@ -134,8 +134,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for fade-in animation
-const animateOnScroll = document.querySelectorAll('.category-card, .featured-card, .feature-item');
+// Observe elements for fade-in animation (exclude hidden categories)
+const animateOnScroll = document.querySelectorAll('.category-card:not(.category-hidden), .featured-card, .feature-item');
 animateOnScroll.forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(30px)';
@@ -332,6 +332,8 @@ const categoryCardsAll = document.querySelectorAll('.category-card');
 if (categorySearch) {
     categorySearch.addEventListener('input', debounce(function(e) {
         const searchTerm = e.target.value.toLowerCase().trim();
+        const grid = document.getElementById('categories-grid');
+        const showMoreButton = document.getElementById('show-more-btn');
 
         // Show/hide clear button
         if (searchClear) {
@@ -339,11 +341,26 @@ if (categorySearch) {
         }
 
         if (searchTerm === '') {
-            // Reset all cards
+            // Reset all cards and collapse grid
             categoryCardsAll.forEach(card => {
                 card.classList.remove('dimmed', 'highlight');
             });
+            // Collapse grid when search is cleared
+            if (grid) grid.classList.remove('expanded');
+            if (showMoreButton) {
+                showMoreButton.classList.remove('expanded');
+                const textSpan = showMoreButton.querySelector('.show-more-text');
+                if (textSpan) textSpan.textContent = 'Show More Categories';
+            }
             return;
+        }
+
+        // Expand grid to show all categories when searching
+        if (grid) grid.classList.add('expanded');
+        if (showMoreButton) {
+            showMoreButton.classList.add('expanded');
+            const textSpan = showMoreButton.querySelector('.show-more-text');
+            if (textSpan) textSpan.textContent = 'Show Less';
         }
 
         categoryCardsAll.forEach(card => {
@@ -370,14 +387,60 @@ if (categorySearch) {
     // Clear search
     if (searchClear) {
         searchClear.addEventListener('click', function() {
+            const grid = document.getElementById('categories-grid');
+            const showMoreButton = document.getElementById('show-more-btn');
+
             categorySearch.value = '';
             searchClear.classList.remove('visible');
             categoryCardsAll.forEach(card => {
                 card.classList.remove('dimmed', 'highlight');
             });
+            // Collapse grid when search is cleared
+            if (grid) grid.classList.remove('expanded');
+            if (showMoreButton) {
+                showMoreButton.classList.remove('expanded');
+                const textSpan = showMoreButton.querySelector('.show-more-text');
+                if (textSpan) textSpan.textContent = 'Show More Categories';
+            }
             categorySearch.focus();
         });
     }
+}
+
+// ===================================
+// Show More Categories Toggle
+// ===================================
+const showMoreBtn = document.getElementById('show-more-btn');
+const categoriesGrid = document.getElementById('categories-grid');
+
+if (showMoreBtn && categoriesGrid) {
+    showMoreBtn.addEventListener('click', function() {
+        const isExpanded = categoriesGrid.classList.contains('expanded');
+        const textSpan = this.querySelector('.show-more-text');
+
+        if (isExpanded) {
+            // Collapse
+            categoriesGrid.classList.remove('expanded');
+            this.classList.remove('expanded');
+            if (textSpan) textSpan.textContent = 'Show More Categories';
+
+            // Scroll to categories section smoothly
+            const categoriesSection = document.getElementById('categories');
+            if (categoriesSection) {
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                const targetPosition = categoriesSection.offsetTop - navbarHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        } else {
+            // Expand
+            categoriesGrid.classList.add('expanded');
+            this.classList.add('expanded');
+            if (textSpan) textSpan.textContent = 'Show Less';
+        }
+    });
 }
 
 // ===================================

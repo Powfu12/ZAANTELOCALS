@@ -895,6 +895,43 @@ section {
     transform: translateX(6px);
 }
 
+/* Hidden Categories (Show More) */
+.category-card.category-hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.categories-grid.expanded .category-card.category-hidden {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Show More Button */
+.categories-show-more {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+.show-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-weight: 500;
+}
+
+.show-more-icon {
+    transition: transform var(--transition-normal);
+}
+
+.show-more-btn.expanded .show-more-icon {
+    transform: rotate(180deg);
+}
+
 /* ===================================
    Featured Section
    =================================== */
