@@ -689,6 +689,97 @@ section {
     background-color: var(--light-sand);
 }
 
+/* Category Search Bar */
+.category-search {
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    border: 2px solid transparent;
+    transition: all var(--transition-fast);
+    overflow: hidden;
+}
+
+.search-wrapper:focus-within {
+    border-color: var(--primary-teal);
+    box-shadow: var(--shadow-lg), 0 0 0 4px rgba(59, 155, 143, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1.25rem;
+    color: var(--medium-gray);
+    pointer-events: none;
+    transition: color var(--transition-fast);
+}
+
+.search-wrapper:focus-within .search-icon {
+    color: var(--primary-teal);
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 3.5rem;
+    border: none;
+    background: transparent;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--almost-black);
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--medium-gray);
+}
+
+.search-clear {
+    position: absolute;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--medium-gray);
+    background-color: var(--light-sand);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+}
+
+.search-clear.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-clear:hover {
+    background-color: var(--primary-teal);
+    color: var(--white);
+}
+
+/* Category card highlight when searched */
+.category-card.highlight {
+    animation: pulse-highlight 0.6s ease;
+}
+
+.category-card.dimmed {
+    opacity: 0.3;
+    transform: scale(0.98);
+}
+
+@keyframes pulse-highlight {
+    0%, 100% { box-shadow: var(--shadow-sm); }
+    50% { box-shadow: 0 0 0 4px rgba(59, 155, 143, 0.3), var(--shadow-lg); }
+}
+
 .categories-grid {
     display: grid;
     grid-template-columns: 1fr;
