@@ -1,0 +1,276 @@
+/* ===================================
+   ZanteLocals - Beaches Page CSS
+   =================================== */
+
+/* ===================================
+   Beaches Header Override
+   =================================== */
+.beaches-header {
+    background: linear-gradient(135deg, #0891b2 0%, #164e63 100%);
+}
+
+.beaches-header .header-overlay {
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 200, 100, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+}
+
+/* ===================================
+   Beach Legend
+   =================================== */
+.beach-legend {
+    background-color: var(--white);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--light-sand);
+}
+
+.legend-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    color: var(--dark-gray);
+}
+
+.legend-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.legend-icon.available {
+    background-color: rgba(45, 139, 95, 0.15);
+    color: var(--primary-teal);
+}
+
+.legend-icon.limited {
+    background-color: rgba(255, 184, 77, 0.2);
+    color: #d97706;
+}
+
+.legend-icon.unavailable {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+}
+
+/* ===================================
+   Region Sections
+   =================================== */
+.region-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--light-sand);
+}
+
+.region-section:nth-child(even) {
+    background-color: var(--white);
+}
+
+.region-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.region-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--almost-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.region-icon {
+    font-size: 1.1em;
+}
+
+.region-description {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   Beach Card Modifications
+   =================================== */
+.beach-card .listing-content {
+    gap: var(--spacing-xs);
+}
+
+.beach-card .listing-description {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ===================================
+   Beach Facilities Grid
+   =================================== */
+.beach-facilities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: var(--light-sand);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-sm) 0;
+}
+
+.facility-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.8rem;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    background-color: var(--white);
+}
+
+.facility-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.facility-item span:nth-child(2) {
+    flex: 1;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.facility-status {
+    font-weight: 600;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.facility-item.available .facility-status {
+    color: var(--primary-teal);
+}
+
+.facility-item.limited .facility-status {
+    color: #d97706;
+}
+
+.facility-item.unavailable .facility-status {
+    color: #dc2626;
+}
+
+.facility-item.boat-only .facility-status {
+    color: #0891b2;
+    font-weight: 700;
+}
+
+/* ===================================
+   Boat-Only Section
+   =================================== */
+.boat-only-section {
+    background: linear-gradient(135deg, #0c4a6e 0%, #164e63 100%);
+    color: var(--white);
+}
+
+.boat-only-section .region-title {
+    color: var(--white);
+}
+
+.boat-only-section .region-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.boat-beaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.boat-beach-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.boat-beach-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+.boat-beach-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.boat-beach-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.boat-beach-card p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.boat-cta {
+    text-align: center;
+}
+
+.boat-cta p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
+}
+
+.boat-cta .btn-primary {
+    background: var(--white);
+    color: var(--primary-dark);
+}
+
+.boat-cta .btn-primary:hover {
+    background: var(--light-sand);
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 767px) {
+    .beach-facilities {
+        grid-template-columns: 1fr;
+    }
+
+    .legend-wrapper {
+        gap: var(--spacing-md);
+    }
+
+    .region-title {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .boat-beaches-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .beach-facilities {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

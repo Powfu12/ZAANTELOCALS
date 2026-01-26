@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the best beaches in Zakynthos. From the iconic Navagio Shipwreck to hidden coves, find your perfect beach recommended by locals.">
+    <title>Beaches - ZanteLocals</title>
+    <link rel="stylesheet" href="zantelocals-styles.css">
+    <link rel="stylesheet" href="zantelocals-category.css">
+    <link rel="stylesheet" href="zantelocals-beaches.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-zante">Zante</span><span class="logo-locals">Locals</span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="zantelocals-beaches.html" class="nav-link active">Beaches</a></li>
+                    <li><a href="zantelocals-restaurants.html" class="nav-link">Restaurants</a></li>
+                    <li><a href="zantelocals-bars.html" class="nav-link">Bars & Clubs</a></li>
+                    <li><a href="zantelocals-experiences.html" class="nav-link">Experiences</a></li>
+                </ul>
+
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header beaches-header">
+        <div class="header-background">
+            <div class="header-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Beaches</span>
+                </div>
+                <h1 class="page-title">
+                    <span class="title-icon">🏖️</span>
+                    Zakynthos Beaches
+                </h1>
+                <p class="page-subtitle">From world-famous Shipwreck Beach to hidden coves, discover the stunning coastline of Zante</p>
+                <div class="page-stats">
+                    <span class="stat">14+ Beaches</span>
+                    <span class="stat-divider">•</span>
+                    <span class="stat">4 Regions</span>
+                    <span class="stat-divider">•</span>
+                    <span class="stat">Local Verified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="filter-group">
+                    <label class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Region
+                    </label>
+                    <select class="filter-select" id="region-filter">
+                        <option value="all">All Regions</option>
+                        <option value="north">North Zakynthos</option>
+                        <option value="east">East Zakynthos</option>
+                        <option value="south">South Zakynthos</option>
+                        <option value="west">West Zakynthos</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 12H22" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Beach Type
+                    </label>
+                    <select class="filter-select" id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="sand">Sandy Beach</option>
+                        <option value="pebble">Pebble Beach</option>
+                        <option value="rocky">Rocky Cove</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 7H21M10 12H21M3 17H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Facilities
+                    </label>
+                    <select class="filter-select" id="facilities-filter">
+                        <option value="all">All Facilities</option>
+                        <option value="organized">Organized (Umbrellas)</option>
+                        <option value="food">Food & Drinks</option>
+                        <option value="natural">Natural/Unspoiled</option>
+                    </select>
+                </div>
+
+                <button class="filter-reset" id="reset-filters">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M21 3V8H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Reset
+                </button>
+            </div>
+
+            <div class="results-count">
+                Showing <span id="results-number">14</span> beaches
+            </div>
+        </div>
+    </section>
+
+    <!-- Beach Legend -->
+    <section class="beach-legend">
+        <div class="container">
+            <div class="legend-wrapper">
+                <div class="legend-item">
+                    <span class="legend-icon available">✓</span>
+                    <span>Available</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon limited">⚠</span>
+                    <span>Limited</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon unavailable">✗</span>
+                    <span>Not Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NORTH ZAKYNTHOS -->
+    <section class="region-section" data-region="north">
+        <div class="container">
+            <div class="region-header">
+                <h2 class="region-title">
+                    <span class="region-icon">🧭</span>
+                    North Zakynthos
+                </h2>
+                <p class="region-description">Dramatic cliffs, crystal-clear waters, and the world-famous Shipwreck Beach</p>
+            </div>
+
+            <div class="listings-grid">
+                <!-- Navagio (Shipwreck Beach) -->
+                <div class="listing-card beach-card" data-region="north" data-type="pebble" data-facilities="natural">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=600&q=80" alt="Navagio Shipwreck Beach" loading="lazy">
+                        <div class="listing-badge top-rated">🚢 World Famous</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Navagio (Shipwreck Beach)</h3>
+                        </div>
+                        <div class="listing-type">Pebble Beach • Small</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>North Zakynthos</span>
+                        </div>
+                        <p class="listing-description">The most iconic beach in Greece. A dramatic cove enclosed by towering limestone cliffs, home to the famous rusted shipwreck of MV Panagiotis.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item unavailable">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">✗</span>
+                            </div>
+                            <div class="facility-item unavailable">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✗ Viewpoint only</span>
+                            </div>
+                            <div class="facility-item unavailable">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✗</span>
+                            </div>
+                            <div class="facility-item boat-only">
+                                <span class="facility-icon">🚤</span>
+                                <span>Access</span>
+                                <span class="facility-status">Boat Only</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Boat Access Only</span>
+                            <span class="highlight-tag">Instagram Famous</span>
+                            <span class="highlight-tag">Must Visit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Makrys Gialos -->
+                <div class="listing-card beach-card" data-region="north" data-type="pebble" data-facilities="food">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Makrys Gialos Beach" loading="lazy">
+                        <div class="listing-badge local-favorite">❤️ Local Favorite</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Makrys Gialos</h3>
+                        </div>
+                        <div class="listing-type">Pebble Beach • Small</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>North Zakynthos</span>
+                        </div>
+                        <p class="listing-description">A charming pebble beach with crystal-clear waters, perfect for swimming and snorkeling. Traditional taverna nearby serves fresh local dishes.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item limited">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">⚠ Limited</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓ Nearby</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Taverna</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ By Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Clear Water</span>
+                            <span class="highlight-tag">Snorkeling</span>
+                            <span class="highlight-tag">Taverna</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Xigia -->
+                <div class="listing-card beach-card" data-region="north" data-type="pebble" data-facilities="food">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="Xigia Beach" loading="lazy">
+                        <div class="listing-badge best-value">💎 Hidden Gem</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Xigia Beach</h3>
+                        </div>
+                        <div class="listing-type">Pebble Beach • Small</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>North Zakynthos</span>
+                        </div>
+                        <p class="listing-description">Famous for its natural sulfur springs that give the water therapeutic properties. The distinctive smell is worth the incredible health benefits!</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item limited">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">⚠ Few</span>
+                            </div>
+                            <div class="facility-item limited">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">⚠ Limited</span>
+                            </div>
+                            <div class="facility-item limited">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">⚠ Snack Bar</span>
+                            </div>
+                            <div class="facility-item limited">
+                                <span class="facility-icon">🚶</span>
+                                <span>Access</span>
+                                <span class="facility-status">⚠ Short Walk</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Sulfur Springs</span>
+                            <span class="highlight-tag">Therapeutic</span>
+                            <span class="highlight-tag">Natural Spa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEST ZAKYNTHOS -->
+    <section class="region-section" data-region="west">
+        <div class="container">
+            <div class="region-header">
+                <h2 class="region-title">
+                    <span class="region-icon">🌅</span>
+                    West Zakynthos
+                </h2>
+                <p class="region-description">Stunning rocky coves, incredible sunset views, and some of the clearest waters on the island</p>
+            </div>
+
+            <div class="listings-grid">
+                <!-- Porto Limnionas -->
+                <div class="listing-card beach-card" data-region="west" data-type="rocky" data-facilities="food">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" alt="Porto Limnionas" loading="lazy">
+                        <div class="listing-badge top-rated">⭐ Top Rated</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Porto Limnionas</h3>
+                        </div>
+                        <div class="listing-type">Rocky Cove • Small</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>West Zakynthos</span>
+                        </div>
+                        <p class="listing-description">A breathtaking natural fjord with impossibly turquoise waters. Perfect for cliff jumping, snorkeling, and exploring sea caves. The taverna above offers stunning views.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item unavailable">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">✗</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Taverna</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ By Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Cliff Jumping</span>
+                            <span class="highlight-tag">Snorkeling</span>
+                            <span class="highlight-tag">Sea Caves</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Porto Roxa -->
+                <div class="listing-card beach-card" data-region="west" data-type="rocky" data-facilities="food">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1520942702018-0862200e6873?w=600&q=80" alt="Porto Roxa" loading="lazy">
+                        <div class="listing-badge best-value">🏊 Great Swimming</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Porto Roxa</h3>
+                        </div>
+                        <div class="listing-type">Rocky Cove • Small</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>West Zakynthos</span>
+                        </div>
+                        <p class="listing-description">A hidden rocky cove with pristine emerald waters. Less crowded than Porto Limnionas but equally beautiful. Features a beach bar with refreshing drinks and snacks.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item unavailable">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">✗</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍹</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Beach Bar</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ By Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Less Crowded</span>
+                            <span class="highlight-tag">Beach Bar</span>
+                            <span class="highlight-tag">Clear Water</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EAST ZAKYNTHOS -->
+    <section class="region-section" data-region="east">
+        <div class="container">
+            <div class="region-header">
+                <h2 class="region-title">
+                    <span class="region-icon">🌊</span>
+                    East Zakynthos
+                </h2>
+                <p class="region-description">Long sandy beaches with calm waters, perfect for families and water sports</p>
+            </div>
+
+            <div class="listings-grid">
+                <!-- Alykes -->
+                <div class="listing-card beach-card" data-region="east" data-type="sand" data-facilities="organized">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600&q=80" alt="Alykes Beach" loading="lazy">
+                        <div class="listing-badge top-rated">👨‍👩‍👧‍👦 Family Friendly</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Alykes Beach</h3>
+                        </div>
+                        <div class="listing-type">Sandy Beach • Large</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>East Zakynthos</span>
+                        </div>
+                        <p class="listing-description">A beautiful long sandy beach with shallow, calm waters ideal for families. The village of Alykes offers plenty of tavernas, shops, and water sports facilities.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item available">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Many options</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ Walk & Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Sandy</span>
+                            <span class="highlight-tag">Shallow Water</span>
+                            <span class="highlight-tag">Water Sports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alykanas -->
+                <div class="listing-card beach-card" data-region="east" data-type="sand" data-facilities="organized">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=600&q=80" alt="Alykanas Beach" loading="lazy">
+                        <div class="listing-badge local-favorite">🏖️ Relaxing</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Alykanas Beach</h3>
+                        </div>
+                        <div class="listing-type">Sandy Beach • Large</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>East Zakynthos</span>
+                        </div>
+                        <p class="listing-description">Neighboring Alykes, this equally beautiful sandy beach offers a slightly quieter atmosphere. Well-organized with plenty of amenities and gentle waters for swimming.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item available">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Many options</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ Walk & Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Sandy</span>
+                            <span class="highlight-tag">Organized</span>
+                            <span class="highlight-tag">Calm Waters</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ammoudi -->
+                <div class="listing-card beach-card" data-region="east" data-type="sand" data-facilities="food">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Ammoudi Beach" loading="lazy">
+                        <div class="listing-badge best-value">🌴 Peaceful</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Ammoudi Beach</h3>
+                        </div>
+                        <div class="listing-type">Sandy Beach • Small</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>East Zakynthos</span>
+                        </div>
+                        <p class="listing-description">A small, picturesque sandy beach with a more intimate atmosphere. Local tavernas serve traditional Greek dishes with views of the Ionian Sea.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item limited">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">⚠ Few</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Tavernas</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ By Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Quiet</span>
+                            <span class="highlight-tag">Traditional</span>
+                            <span class="highlight-tag">Local Vibe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tsilivi -->
+                <div class="listing-card beach-card" data-region="east" data-type="sand" data-facilities="organized">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=600&q=80" alt="Tsilivi Beach" loading="lazy">
+                        <div class="listing-badge top-rated">🏆 Blue Flag</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Tsilivi Beach</h3>
+                        </div>
+                        <div class="listing-type">Sandy Beach • Large</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>East Zakynthos</span>
+                        </div>
+                        <p class="listing-description">One of the most popular tourist beaches on the island. Awarded the Blue Flag for cleanliness and safety. Excellent facilities including water sports, restaurants, and beach bars.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item available">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Many options</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ Walk & Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Blue Flag</span>
+                            <span class="highlight-tag">Water Sports</span>
+                            <span class="highlight-tag">Lively</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOUTH ZAKYNTHOS -->
+    <section class="region-section" data-region="south">
+        <div class="container">
+            <div class="region-header">
+                <h2 class="region-title">
+                    <span class="region-icon">🐢</span>
+                    South Zakynthos
+                </h2>
+                <p class="region-description">Home to the Caretta caretta sea turtles, with long sandy beaches and protected nesting areas</p>
+            </div>
+
+            <div class="listings-grid">
+                <!-- Laganas -->
+                <div class="listing-card beach-card" data-region="south" data-type="sand" data-facilities="organized">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1520942702018-0862200e6873?w=600&q=80" alt="Laganas Beach" loading="lazy">
+                        <div class="listing-badge top-rated">🎉 Most Popular</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Laganas Beach</h3>
+                        </div>
+                        <div class="listing-type">Sandy Beach • Very Large</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>South Zakynthos</span>
+                        </div>
+                        <p class="listing-description">The longest and most famous beach in Zakynthos. A 9km stretch of golden sand with endless facilities, beach bars, restaurants, and vibrant nightlife nearby.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item available">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Extensive</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ Walk & Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">9km Long</span>
+                            <span class="highlight-tag">Nightlife</span>
+                            <span class="highlight-tag">Water Sports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kalamaki -->
+                <div class="listing-card beach-card" data-region="south" data-type="sand" data-facilities="organized">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="Kalamaki Beach" loading="lazy">
+                        <div class="listing-badge local-favorite">🐢 Turtle Nesting</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Kalamaki Beach</h3>
+                        </div>
+                        <div class="listing-type">Sandy Beach • Large</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>South Zakynthos</span>
+                        </div>
+                        <p class="listing-description">A protected Caretta caretta sea turtle nesting beach within the National Marine Park. Umbrellas are limited to protect nesting sites. A beautiful, more relaxed alternative to Laganas.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item limited">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">⚠ Limited (Protected)</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ By Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Protected Area</span>
+                            <span class="highlight-tag">Sea Turtles</span>
+                            <span class="highlight-tag">Natural</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gerakas -->
+                <div class="listing-card beach-card" data-region="south" data-type="sand" data-facilities="natural">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600&q=80" alt="Gerakas Beach" loading="lazy">
+                        <div class="listing-badge best-value">🌿 Pristine Nature</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Gerakas Beach</h3>
+                        </div>
+                        <div class="listing-type">Sandy Beach • Large</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>South Zakynthos</span>
+                        </div>
+                        <p class="listing-description">One of the most important sea turtle nesting beaches in the Mediterranean. A stunning natural beach backed by dramatic clay cliffs. No facilities on the beach itself to protect wildlife.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item limited">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">⚠ Limited</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">✓</span>
+                            </div>
+                            <div class="facility-item unavailable">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✗ Outside beach</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">✓ By Car</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Turtle Sanctuary</span>
+                            <span class="highlight-tag">Clay Cliffs</span>
+                            <span class="highlight-tag">Unspoiled</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dafni -->
+                <div class="listing-card beach-card" data-region="south" data-type="sand" data-facilities="food">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" alt="Dafni Beach" loading="lazy">
+                        <div class="listing-badge local-favorite">🏝️ Secluded</div>
+                        <button class="favorite-btn" aria-label="Add to favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Dafni Beach</h3>
+                        </div>
+                        <div class="listing-type">Sandy Beach • Large</div>
+                        <div class="listing-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>South Zakynthos</span>
+                        </div>
+                        <p class="listing-description">A remote and beautiful beach reached via a challenging dirt road. The journey is worth it for those seeking solitude and pristine natural surroundings. Traditional tavernas nearby.</p>
+
+                        <div class="beach-facilities">
+                            <div class="facility-item limited">
+                                <span class="facility-icon">☂️</span>
+                                <span>Umbrellas</span>
+                                <span class="facility-status">⚠</span>
+                            </div>
+                            <div class="facility-item limited">
+                                <span class="facility-icon">🅿️</span>
+                                <span>Parking</span>
+                                <span class="facility-status">⚠ Dirt Road</span>
+                            </div>
+                            <div class="facility-item available">
+                                <span class="facility-icon">🍽️</span>
+                                <span>Food/Bar</span>
+                                <span class="facility-status">✓ Tavernas</span>
+                            </div>
+                            <div class="facility-item limited">
+                                <span class="facility-icon">🚗</span>
+                                <span>Access</span>
+                                <span class="facility-status">⚠ Difficult Road</span>
+                            </div>
+                        </div>
+
+                        <div class="listing-highlights">
+                            <span class="highlight-tag">Off the Beaten Path</span>
+                            <span class="highlight-tag">Adventure</span>
+                            <span class="highlight-tag">Secluded</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOAT-ONLY BEACHES -->
+    <section class="region-section boat-only-section" data-region="boat">
+        <div class="container">
+            <div class="region-header">
+                <h2 class="region-title">
+                    <span class="region-icon">🚤</span>
+                    Boat-Only Beaches
+                </h2>
+                <p class="region-description">These spectacular locations can only be reached by boat - book a tour to experience them!</p>
+            </div>
+
+            <div class="boat-beaches-grid">
+                <div class="boat-beach-card">
+                    <div class="boat-beach-icon">🚢</div>
+                    <h3>Navagio Beach (Shipwreck)</h3>
+                    <p>The world-famous Shipwreck Beach - accessible only by boat from Zakynthos ports</p>
+                </div>
+                <div class="boat-beach-card">
+                    <div class="boat-beach-icon">💎</div>
+                    <h3>Blue Caves</h3>
+                    <p>Stunning sea caves with magical blue light reflections - a must-see boat excursion</p>
+                </div>
+                <div class="boat-beach-card">
+                    <div class="boat-beach-icon">🏝️</div>
+                    <h3>Hidden West Coast Beaches</h3>
+                    <p>Secret coves and pristine beaches along the dramatic western coastline</p>
+                </div>
+            </div>
+
+            <div class="boat-cta">
+                <p>Want to visit these incredible spots?</p>
+                <a href="zantelocals-experiences.html" class="btn btn-primary">
+                    <span>Book a Boat Tour</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Need Help Choosing?</h2>
+                <p class="cta-subtitle">Contact us for personalized beach recommendations based on your preferences</p>
+                <a href="zantelocals-contact.html" class="btn btn-primary btn-large">
+                    <span>Get Recommendations</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-zante">Zante</span><span class="logo-locals">Locals</span>
+                    </a>
+                    <p class="footer-description">
+                        Discover Zakynthos like a local. Trusted recommendations for an authentic island experience.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="zantelocals-beaches.html">Beaches</a></li>
+                        <li><a href="zantelocals-restaurants.html">Restaurants</a></li>
+                        <li><a href="zantelocals-bars.html">Bars & Clubs</a></li>
+                        <li><a href="zantelocals-experiences.html">Experiences</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="zantelocals-about.html">About Us</a></li>
+                        <li><a href="zantelocals-contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Get in Touch</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>hello@zantelocals.com</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Zakynthos, Greece</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ZanteLocals. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="zantelocals-beaches.html" class="mobile-nav-item active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.5 19H9.5C7.5 19 5.5 18 4 16.5C2.5 15 2 13 2 11C2 9 3 7 4.5 6C6 5 8 5 9.5 5.5C10.5 4 12 3 14 3C16 3 17.5 4 18.5 5.5C20 5 22 5 22 7.5C22 10 20 11 18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M2 22H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 11V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Beaches</span>
+        </a>
+        <a href="zantelocals-restaurants.html" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 3V8M8 8V21M8 8C10.2091 8 12 6.20914 12 4V3M16 3V11M16 11V21M16 11C13.7909 11 12 9.20914 12 7V3" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>Food</span>
+        </a>
+        <a href="zantelocals-contact.html" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script src="zantelocals-script.js"></script>
+    <script src="zantelocals-category.js"></script>
+</body>
+</html>
