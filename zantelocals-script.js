@@ -323,6 +323,64 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===================================
+// Category Search Functionality
+// ===================================
+const categorySearch = document.getElementById('category-search');
+const searchClear = document.getElementById('search-clear');
+const categoryCardsAll = document.querySelectorAll('.category-card');
+
+if (categorySearch) {
+    categorySearch.addEventListener('input', debounce(function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
+
+        // Show/hide clear button
+        if (searchClear) {
+            searchClear.classList.toggle('visible', searchTerm.length > 0);
+        }
+
+        if (searchTerm === '') {
+            // Reset all cards
+            categoryCardsAll.forEach(card => {
+                card.classList.remove('dimmed', 'highlight');
+            });
+            return;
+        }
+
+        categoryCardsAll.forEach(card => {
+            const title = card.querySelector('.category-title')?.textContent.toLowerCase() || '';
+            const description = card.querySelector('.category-description')?.textContent.toLowerCase() || '';
+            const category = card.dataset.category?.toLowerCase() || '';
+
+            const matches = title.includes(searchTerm) ||
+                           description.includes(searchTerm) ||
+                           category.includes(searchTerm);
+
+            if (matches) {
+                card.classList.remove('dimmed');
+                card.classList.add('highlight');
+                // Remove highlight class after animation
+                setTimeout(() => card.classList.remove('highlight'), 600);
+            } else {
+                card.classList.add('dimmed');
+                card.classList.remove('highlight');
+            }
+        });
+    }, 200));
+
+    // Clear search
+    if (searchClear) {
+        searchClear.addEventListener('click', function() {
+            categorySearch.value = '';
+            searchClear.classList.remove('visible');
+            categoryCardsAll.forEach(card => {
+                card.classList.remove('dimmed', 'highlight');
+            });
+            categorySearch.focus();
+        });
+    }
+}
+
+// ===================================
 // Export functions for use in other files
 // ===================================
 window.ZanteLocals = {
