@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .beach-loading-screen.hidden {
@@ -36,7 +36,7 @@
     left: 0;
     width: 200%;
     height: 40%;
-    animation: wave-slide 1.5s ease-in-out infinite;
+    animation: wave-slide 1s ease-in-out infinite;
 }
 
 .wave-svg {
@@ -49,17 +49,17 @@
 }
 
 .wave-1 {
-    animation: wave-move-1 3s ease-in-out infinite;
+    animation: wave-move-1 1.8s ease-in-out infinite;
     fill: rgba(255, 255, 255, 0.1);
 }
 
 .wave-2 {
-    animation: wave-move-2 2.5s ease-in-out infinite;
+    animation: wave-move-2 1.5s ease-in-out infinite;
     fill: rgba(255, 255, 255, 0.15);
 }
 
 .wave-3 {
-    animation: wave-move-3 2s ease-in-out infinite;
+    animation: wave-move-3 1.2s ease-in-out infinite;
     fill: rgba(255, 255, 255, 0.2);
 }
 
@@ -112,7 +112,7 @@
 .loader-icon {
     font-size: 4rem;
     margin-bottom: 1rem;
-    animation: float-icon 2s ease-in-out infinite;
+    animation: float-icon 1.2s ease-in-out infinite;
 }
 
 @keyframes float-icon {
@@ -144,7 +144,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 2s linear infinite;
+    animation: shimmer 1.2s linear infinite;
 }
 
 @keyframes shimmer {

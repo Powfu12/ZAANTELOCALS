@@ -16,8 +16,8 @@ window.addEventListener('load', () => {
         // Remove loading screen from DOM after transition
         setTimeout(() => {
             loadingScreen.remove();
-        }, 500);
-    }, 2500); // Adjust timing to match animation duration
+        }, 300);
+    }, 1200); // Faster loading screen
 });
 
 // ===================================
