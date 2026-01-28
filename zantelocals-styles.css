@@ -7,25 +7,27 @@
    CSS Variables & Reset
    =================================== */
 :root {
-    /* Primary Colors - Mediterranean Palette */
-    --primary-teal: #3B9B8F;
-    --primary-dark: #2A7368;
-    --primary-light: #5FB3A7;
-    --primary-lighter: #EBF5F3;
+    /* Primary Colors - Island Green */
+    --primary-green: #2D8B5F;
+    --primary-teal: #2D8B5F;
+    --primary-dark: #1F6B47;
+    --primary-light: #4CAF88;
+    --primary-lighter: #E8F5F0;
 
-    /* Mediterranean Accent Colors */
-    --accent-terracotta: #D97757;
-    --accent-sand: #E8DFD0;
-    --accent-ocean: #5FB3D3;
-    --accent-gold: #E5B66A;
+    /* Accent Colors - Sunset Tones */
+    --accent-orange: #FF8C42;
+    --accent-yellow: #FFB84D;
+    --accent-coral: #FF6B6B;
+    --accent-terracotta: #FF8C42;
+    --accent-gold: #FFB84D;
 
-    /* Neutral Colors - Warm and inviting */
+    /* Neutral Colors */
     --white: #FFFFFF;
-    --off-white: #FAFAF8;
-    --light-sand: #F5F1E8;
-    --medium-gray: #6B7280;
-    --dark-gray: #374151;
-    --almost-black: #1F2937;
+    --off-white: #F8F9FA;
+    --light-sand: #F8F9FA;
+    --medium-gray: #6C757D;
+    --dark-gray: #2C3E50;
+    --almost-black: #1A1A1A;
 
     /* Spacing - More generous */
     --spacing-xs: 0.5rem;
@@ -108,12 +110,12 @@ button {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-dark) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .loading-screen.hidden {
@@ -140,7 +142,7 @@ button {
     display: inline-block;
     color: var(--white);
     opacity: 0;
-    animation: colorFill 0.5s ease forwards;
+    animation: colorFill 0.8s ease forwards;
     animation-delay: calc(var(--i) * 0.1s);
 }
 
@@ -177,7 +179,7 @@ button {
     height: 12px;
     background-color: var(--white);
     border-radius: 50%;
-    animation: wave 0.8s ease-in-out infinite;
+    animation: wave 1.2s ease-in-out infinite;
     animation-delay: calc(var(--i) * 0.15s);
 }
 
@@ -768,16 +770,22 @@ section {
 /* Category card highlight when searched */
 .category-card.highlight {
     animation: pulse-highlight 0.6s ease;
+    box-shadow: 0 0 0 3px var(--primary-teal), var(--shadow-lg);
 }
 
 .category-card.dimmed {
-    opacity: 0.3;
-    transform: scale(0.98);
+    display: none !important;
+}
+
+.category-card.search-match {
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 @keyframes pulse-highlight {
-    0%, 100% { box-shadow: var(--shadow-sm); }
-    50% { box-shadow: 0 0 0 4px rgba(59, 155, 143, 0.3), var(--shadow-lg); }
+    0%, 100% { box-shadow: 0 0 0 3px var(--primary-teal), var(--shadow-sm); }
+    50% { box-shadow: 0 0 0 5px var(--primary-teal), var(--shadow-lg); }
 }
 
 .categories-grid {
@@ -891,6 +899,43 @@ section {
 
 .category-card:hover .category-arrow {
     transform: translateX(6px);
+}
+
+/* Hidden Categories (Show More) */
+.category-card.category-hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.categories-grid.expanded .category-card.category-hidden {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Show More Button */
+.categories-show-more {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+.show-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-weight: 500;
+}
+
+.show-more-icon {
+    transition: transform var(--transition-normal);
+}
+
+.show-more-btn.expanded .show-more-icon {
+    transform: rotate(180deg);
 }
 
 /* ===================================
