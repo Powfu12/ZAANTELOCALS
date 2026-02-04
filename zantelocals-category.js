@@ -10,13 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroVideo = document.querySelector('.hero-video');
 
     if (heroVideo) {
-        // Ensure video plays only once and freezes on last frame
+        // Ensure video never loops
         heroVideo.loop = false;
+        heroVideo.removeAttribute('loop');
 
-        // When video ends, keep it paused at the last frame
+        // When video ends, freeze on last frame
         heroVideo.addEventListener('ended', () => {
+            // Seek to just before the end to show last frame
+            heroVideo.currentTime = Math.max(0, heroVideo.duration - 0.1);
             heroVideo.pause();
-            heroVideo.currentTime = heroVideo.duration;
+        });
+
+        // Backup: pause near the end to ensure freeze
+        heroVideo.addEventListener('timeupdate', () => {
+            if (heroVideo.duration && heroVideo.currentTime >= heroVideo.duration - 0.1) {
+                heroVideo.pause();
+            }
         });
 
         // Try to play video when loaded
