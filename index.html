@@ -585,5 +585,21 @@
     </nav>
 
     <script src="zantelocals-script.js"></script>
+
+    <!-- Fallback: If main script fails, this ensures loader still hides -->
+    <script>
+        window.addEventListener('load', function() {
+            var loader = document.getElementById('loading-screen');
+            if (loader && !loader.classList.contains('hidden')) {
+                setTimeout(function() {
+                    loader.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                    setTimeout(function() {
+                        if (loader.parentNode) loader.remove();
+                    }, 500);
+                }, 2500);
+            }
+        });
+    </script>
 </body>
 </html>
