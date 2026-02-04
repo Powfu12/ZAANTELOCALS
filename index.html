@@ -12,31 +12,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen with Animated Logo -->
+    <!-- Loading Screen with Premium Animated Logo -->
     <div id="loading-screen" class="loading-screen">
+        <div class="loader-background">
+            <div class="loader-wave-bg"></div>
+            <div class="loader-wave-bg loader-wave-bg-2"></div>
+        </div>
         <div class="loading-content">
-            <div class="logo-animation">
-                <span class="logo-text">
-                    <span class="letter" style="--i:0">Z</span>
-                    <span class="letter" style="--i:1">a</span>
-                    <span class="letter" style="--i:2">n</span>
-                    <span class="letter" style="--i:3">t</span>
-                    <span class="letter" style="--i:4">e</span>
-                    <span class="letter space" style="--i:5"> </span>
-                    <span class="letter" style="--i:6">L</span>
-                    <span class="letter" style="--i:7">o</span>
-                    <span class="letter" style="--i:8">c</span>
-                    <span class="letter" style="--i:9">a</span>
-                    <span class="letter" style="--i:10">l</span>
-                    <span class="letter" style="--i:11">s</span>
-                </span>
+            <!-- Location Pin Icon -->
+            <div class="loader-icon">
+                <svg class="loader-pin" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
             </div>
-            <div class="loading-wave">
-                <div class="wave-dot" style="--i:0"></div>
-                <div class="wave-dot" style="--i:1"></div>
-                <div class="wave-dot" style="--i:2"></div>
-                <div class="wave-dot" style="--i:3"></div>
-                <div class="wave-dot" style="--i:4"></div>
+
+            <!-- Logo Text -->
+            <div class="loader-logo">
+                <span class="loader-logo-zante">Zante</span>
+                <span class="loader-logo-locals">Locals</span>
+            </div>
+
+            <!-- Tagline -->
+            <p class="loader-tagline">Discover the island like a local</p>
+
+            <!-- Progress Bar -->
+            <div class="loader-progress-container">
+                <div class="loader-progress-bar">
+                    <div class="loader-progress-fill"></div>
+                </div>
             </div>
         </div>
     </div>
