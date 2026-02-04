@@ -29,14 +29,6 @@
 
 /* Background Video */
 .hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* Poster/Fallback Image */
-.hero-video-poster {
     position: absolute;
     top: 0;
     left: 0;
@@ -45,15 +37,21 @@
     object-fit: cover;
     object-position: center;
     z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
-.hero-video-poster.active {
-    opacity: 1;
+/* Poster/Fallback Image - shows behind video, visible when video fails */
+.hero-video-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
 }
 
-/* Dark Gradient Overlay */
+/* Dark Gradient Overlay - darker for better text readability */
 .hero-video-overlay {
     position: absolute;
     top: 0;
@@ -62,9 +60,9 @@
     height: 100%;
     background: linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.4) 0%,
-        rgba(0, 0, 0, 0.3) 40%,
-        rgba(0, 0, 0, 0.5) 100%
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.45) 40%,
+        rgba(0, 0, 0, 0.65) 100%
     );
     z-index: 2;
 }

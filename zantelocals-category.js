@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Plays video once and freezes on last frame
     // ===================================
     const heroVideo = document.querySelector('.hero-video');
-    const heroPoster = document.querySelector('.hero-video-poster');
 
     if (heroVideo) {
         // Ensure video plays only once and freezes on last frame
@@ -16,55 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // When video ends, keep it paused at the last frame
         heroVideo.addEventListener('ended', () => {
-            // Pause the video (should already be paused but ensure it)
             heroVideo.pause();
-
-            // Keep currentTime at the end (last frame)
-            // This ensures the video stays frozen on last frame
             heroVideo.currentTime = heroVideo.duration;
-
-            // Optionally show poster as fallback
-            // (not needed since video stays on last frame)
-            console.log('✅ Hero video ended - frozen on last frame');
         });
 
-        // Handle video load errors - show poster
-        heroVideo.addEventListener('error', () => {
-            console.warn('⚠️ Hero video failed to load - showing poster');
-            if (heroPoster) {
-                heroPoster.classList.add('active');
-            }
-        });
-
-        // Ensure autoplay works (required attributes: muted, playsinline)
-        heroVideo.addEventListener('loadeddata', () => {
-            heroVideo.play().catch((error) => {
-                console.warn('⚠️ Autoplay blocked:', error);
-                // Show poster if autoplay fails
-                if (heroPoster) {
-                    heroPoster.classList.add('active');
-                }
+        // Try to play video when loaded
+        heroVideo.addEventListener('canplay', () => {
+            heroVideo.play().catch(() => {
+                // Autoplay blocked - poster shows behind as fallback
             });
         });
-
-        // Lazy load video - only load when in viewport
-        if ('IntersectionObserver' in window) {
-            const videoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Load video source if using data-src
-                        const videoSrc = heroVideo.dataset.src;
-                        if (videoSrc && !heroVideo.src) {
-                            heroVideo.src = videoSrc;
-                            heroVideo.load();
-                        }
-                        videoObserver.unobserve(heroVideo);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            videoObserver.observe(heroVideo);
-        }
     }
 
     // ===================================
