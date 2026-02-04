@@ -78,9 +78,15 @@ body {
     color: var(--almost-black);
     background-color: var(--off-white);
     line-height: 1.7;
-    overflow-x: hidden;
+    overflow: hidden; /* Hidden initially, JS enables after loader */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* When loading screen is removed, allow scroll */
+body.loaded {
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 img {
