@@ -23,12 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('.form-submit');
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="animation: spin 1s linear infinite;">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="60" stroke-dashoffset="30"/>
-                </svg>
-                <span>Sending...</span>
-            `;
+            submitBtn.innerHTML = `<span>Sending...</span>`;
 
             // Hide previous messages
             formSuccess.classList.remove('show');
@@ -259,18 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('✅ Contact page initialized');
 });
 
-// Add spin animation for loading spinner
+// Add fadeIn animation for tooltip
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes spin {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
     @keyframes fadeIn {
         from {
             opacity: 0;
