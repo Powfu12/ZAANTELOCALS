@@ -157,7 +157,6 @@
 .facility-status {
     font-weight: 600;
     font-size: 0.675rem;
-    white-space: nowrap;
 }
 
 .facility-item.available .facility-status {
@@ -287,9 +286,9 @@
     }
 }
 
-/* Tablet and up */
+/* Tablet and up - keep 2 columns since facilities are inside cards */
 @media (min-width: 640px) {
     .beach-facilities {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
