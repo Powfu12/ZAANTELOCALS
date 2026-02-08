@@ -4,6 +4,35 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // ===================================
+    // Hero Video Controller
+    // Plays video once and freezes on last frame
+    // ===================================
+    const heroVideo = document.querySelector('.hero-video');
+
+    if (heroVideo) {
+        let videoEnded = false;
+
+        // Ensure video never loops
+        heroVideo.loop = false;
+        heroVideo.removeAttribute('loop');
+
+        // When video ends, just pause (don't seek)
+        heroVideo.addEventListener('ended', () => {
+            videoEnded = true;
+            heroVideo.pause();
+        });
+
+        // Try to play video when loaded (only if not ended)
+        heroVideo.addEventListener('canplay', () => {
+            if (!videoEnded) {
+                heroVideo.play().catch(() => {
+                    // Autoplay blocked - poster shows behind as fallback
+                });
+            }
+        });
+    }
+
+    // ===================================
     // Filter Functionality
     // ===================================
     const locationFilter = document.getElementById('location-filter');
