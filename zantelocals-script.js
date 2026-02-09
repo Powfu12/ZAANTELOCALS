@@ -8,16 +8,23 @@
 window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loading-screen');
 
-    // Hide loading screen after animation completes
-    setTimeout(() => {
-        loadingScreen.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-
-        // Remove loading screen from DOM after transition
+    if (loadingScreen) {
+        // Hide loading screen after animation completes
         setTimeout(() => {
-            loadingScreen.remove();
-        }, 500);
-    }, 2500); // Adjust timing to match animation duration
+            loadingScreen.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+
+            // Remove loading screen from DOM after transition
+            setTimeout(() => {
+                if (loadingScreen.parentNode) {
+                    loadingScreen.remove();
+                }
+            }, 500);
+        }, 2500);
+    } else {
+        // If no loading screen, ensure body is scrollable
+        document.body.style.overflow = 'auto';
+    }
 });
 
 // ===================================
@@ -378,6 +385,25 @@ if (categorySearch) {
             categorySearch.focus();
         });
     }
+}
+
+// ===================================
+// View More Categories Toggle
+// ===================================
+const viewMoreBtn = document.getElementById('viewMoreCategories');
+if (viewMoreBtn) {
+    viewMoreBtn.addEventListener('click', function() {
+        const hiddenCards = document.querySelectorAll('.category-hidden');
+        const isExpanded = viewMoreBtn.classList.toggle('expanded');
+
+        hiddenCards.forEach(card => {
+            card.classList.toggle('category-visible', isExpanded);
+        });
+
+        viewMoreBtn.querySelector('span').textContent = isExpanded
+            ? 'Show Less'
+            : 'View More Categories';
+    });
 }
 
 // ===================================

@@ -37,31 +37,58 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="header-background">
-            <div class="header-overlay"></div>
+    <!-- Hero Video Section -->
+    <section class="hero-video-section">
+        <!-- Video Background -->
+        <div class="hero-video-container">
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                playsinline
+                preload="auto"
+                poster="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=1920&q=80"
+            >
+                <source src="https://videos.pexels.com/video-files/3230286/3230286-uhd_2560_1440_24fps.mp4" type="video/mp4">
+            </video>
+            <!-- Fallback Poster Image -->
+            <img
+                class="hero-video-poster"
+                src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=1920&q=80"
+                alt="Nightlife in Zakynthos"
+                loading="lazy"
+            >
+            <!-- Dark Overlay -->
+            <div class="hero-video-overlay"></div>
         </div>
-        <div class="container">
-            <div class="header-content">
-                <div class="breadcrumb">
-                    <a href="index.html">Home</a>
-                    <span>/</span>
-                    <span>Bars & Clubs</span>
-                </div>
-                <h1 class="page-title">
-                    <span class="title-icon">🍹</span>
-                    Bars & Clubs
-                </h1>
-                <p class="page-subtitle">Experience the legendary nightlife and stunning sunset views of Zakynthos</p>
-                <div class="page-stats">
-                    <span class="stat">35+ Venues</span>
-                    <span class="stat-divider">•</span>
-                    <span class="stat">All Local Verified</span>
-                    <span class="stat-divider">•</span>
-                    <span class="stat">Updated Daily</span>
-                </div>
+
+        <!-- Hero Content -->
+        <div class="hero-video-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Bars & Clubs</span>
             </div>
+            <h1 class="hero-video-title">
+                <span class="title-icon">🍹</span>
+                Bars & Clubs
+            </h1>
+            <p class="hero-video-subtitle">
+                Experience the legendary nightlife and stunning sunset views of Zakynthos
+            </p>
+            <div class="hero-video-stats">
+                <span class="stat">35+ Venues</span>
+                <span class="stat">Local Verified</span>
+                <span class="stat">Updated Daily</span>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
     </section>
 
