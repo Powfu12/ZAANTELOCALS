@@ -488,12 +488,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(31, 107, 71, 0.8) 0%,
-        rgba(45, 139, 95, 0.75) 40%,
-        rgba(31, 107, 71, 0.82) 80%
-    );
+    background: rgba(0, 0, 0, 0.35);
     z-index: 1;
 }
 
