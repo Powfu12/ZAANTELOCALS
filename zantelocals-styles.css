@@ -775,6 +775,33 @@ section {
 .section-cta {
     text-align: center;
     margin-top: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plan-trip-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--medium-gray);
+    transition: color var(--transition-fast);
+    letter-spacing: 0.01em;
+}
+
+.plan-trip-cta:hover {
+    color: var(--primary-green);
+}
+
+.plan-trip-cta svg {
+    transition: transform var(--transition-fast);
+}
+
+.plan-trip-cta:hover svg {
+    transform: translateY(-1px);
 }
 
 /* ===================================
@@ -1482,36 +1509,59 @@ section {
    Trip Planner Section
    =================================== */
 .trip-planner {
-    background: linear-gradient(180deg, var(--white) 0%, #f0f7f4 50%, var(--white) 100%);
     position: relative;
     overflow: hidden;
 }
 
-.trip-planner::before {
-    content: '';
+/* Video Background */
+.trip-planner-video-bg {
     position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(45, 139, 95, 0.04) 0%, transparent 70%);
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
-.trip-planner::after {
-    content: '';
-    position: absolute;
-    bottom: -200px;
-    left: -200px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 140, 66, 0.04) 0%, transparent 70%);
-    pointer-events: none;
+.trip-planner-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.trip-planner .section-header {
+.trip-planner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(31, 107, 71, 0.82) 0%,
+        rgba(45, 139, 95, 0.78) 50%,
+        rgba(31, 107, 71, 0.85) 100%
+    );
+}
+
+.trip-planner .container {
     position: relative;
     z-index: 1;
+}
+
+.trip-planner-badge {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    color: var(--white) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trip-planner-title {
+    color: var(--white) !important;
+    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+}
+
+.trip-planner-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .trip-planner-grid {
@@ -1519,8 +1569,6 @@ section {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
     align-items: stretch;
-    position: relative;
-    z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -1768,13 +1816,11 @@ section {
     text-align: center;
     margin-top: var(--spacing-xl);
     font-size: 0.95rem;
-    color: var(--medium-gray);
+    color: rgba(255, 255, 255, 0.8);
     font-style: italic;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-    z-index: 1;
     line-height: 1.7;
 }
 
