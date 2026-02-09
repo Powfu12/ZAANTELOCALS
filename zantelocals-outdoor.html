@@ -3,13 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Best outdoor activities in Zakynthos. Hiking, kayaking, diving, and island adventures recommended by locals.">
+    <meta name="description" content="Best outdoor activities in Zakynthos. Tennis, padel, gyms, horse riding, beach volleyball and more recommended by locals.">
     <title>Outdoor Activities - ZanteLocals</title>
     <link rel="stylesheet" href="zantelocals-styles.css">
     <link rel="stylesheet" href="zantelocals-category.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Section Navigation Tabs */
+        .section-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        .section-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            font-family: var(--font-primary);
+            color: var(--dark-gray);
+            background: var(--white);
+            border: 1.5px solid rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .section-tab:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+        }
+        .section-tab.active {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+        /* Category Sections */
+        .category-section {
+            margin-bottom: var(--spacing-3xl);
+        }
+        .category-section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--primary-lighter);
+        }
+        .category-section-icon {
+            font-size: 1.5rem;
+        }
+        .category-section-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--almost-black);
+        }
+        .category-section-count {
+            margin-left: auto;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--medium-gray);
+            background: var(--primary-lighter);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+        }
+        /* Listing extras */
+        .listing-hours {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+            margin-bottom: 0.5rem;
+        }
+        .listing-hours svg { flex-shrink: 0; }
+        .listing-price-note {
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+        /* Beach volley info cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+        .info-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .info-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--almost-black);
+            margin-bottom: 0.5rem;
+        }
+        .info-card-desc {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+        .info-card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        /* Hidden section for tab filtering */
+        .category-section.hidden-section { display: none; }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -19,7 +134,6 @@
                 <a href="index.html" class="logo">
                     <span class="logo-zante">Zante</span><span class="logo-locals">Locals</span>
                 </a>
-
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="zantelocals-beaches.html" class="nav-link">Beaches</a></li>
@@ -27,7 +141,6 @@
                     <li><a href="zantelocals-bars.html" class="nav-link">Bars & Clubs</a></li>
                     <li><a href="zantelocals-outdoor.html" class="nav-link active">Outdoor</a></li>
                 </ul>
-
                 <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -39,30 +152,13 @@
 
     <!-- Hero Video Section -->
     <section class="hero-video-section">
-        <!-- Video Background -->
         <div class="hero-video-container">
-            <video
-                class="hero-video"
-                autoplay
-                muted
-                playsinline
-                preload="auto"
-                poster="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=80"
-            >
+            <video class="hero-video" autoplay muted playsinline preload="auto" poster="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=80">
                 <source src="https://videos.pexels.com/video-files/2845118/2845118-hd_1920_1080_24fps.mp4" type="video/mp4">
             </video>
-            <!-- Fallback Poster Image -->
-            <img
-                class="hero-video-poster"
-                src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=80"
-                alt="Outdoor adventures in Zakynthos"
-                loading="lazy"
-            >
-            <!-- Dark Overlay -->
+            <img class="hero-video-poster" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=80" alt="Outdoor adventures in Zakynthos" loading="lazy">
             <div class="hero-video-overlay"></div>
         </div>
-
-        <!-- Hero Content -->
         <div class="hero-video-content">
             <div class="breadcrumb">
                 <a href="index.html">Home</a>
@@ -74,7 +170,7 @@
                 Outdoor Activities
             </h1>
             <p class="hero-video-subtitle">
-                Explore the wild side of Zakynthos with hiking, diving, kayaking, and unforgettable adventures
+                Sports, fitness, horse riding, and outdoor adventures across Zakynthos
             </p>
             <div class="hero-video-stats">
                 <span class="stat">30+ Activities</span>
@@ -82,408 +178,655 @@
                 <span class="stat">Updated Daily</span>
             </div>
         </div>
-
-        <!-- Scroll Indicator -->
         <div class="hero-scroll-indicator">
             <span>Scroll to explore</span>
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
     </section>
 
-    <!-- Filters Section -->
+    <!-- Section Tabs -->
     <section class="filters-section">
         <div class="container">
-            <div class="filters-wrapper">
-                <div class="filter-group">
-                    <label class="filter-label">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Location
-                    </label>
-                    <select class="filter-select" id="location-filter">
-                        <option value="all">All Locations</option>
-                        <option value="navagio">Navagio Area</option>
-                        <option value="keri">Keri</option>
-                        <option value="laganas-bay">Laganas Bay</option>
-                        <option value="marathonisi">Marathonisi</option>
-                        <option value="porto-limnionas">Porto Limnionas</option>
-                        <option value="vasilikos">Vasilikos</option>
-                        <option value="mount-skopos">Mount Skopos</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-label">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z" fill="currentColor"/>
-                        </svg>
-                        Activity Type
-                    </label>
-                    <select class="filter-select" id="type-filter">
-                        <option value="all">All Activities</option>
-                        <option value="hiking">Hiking</option>
-                        <option value="diving">Diving & Snorkeling</option>
-                        <option value="kayaking">Kayaking</option>
-                        <option value="boat">Boat Tours</option>
-                        <option value="cycling">Cycling</option>
-                        <option value="climbing">Rock Climbing</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-label">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 7H21M10 12H21M3 17H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        Price Range
-                    </label>
-                    <select class="filter-select" id="price-filter">
-                        <option value="all">All Prices</option>
-                        <option value="budget">€ - Budget Friendly</option>
-                        <option value="moderate">€€ - Moderate</option>
-                        <option value="upscale">€€€ - Premium</option>
-                    </select>
-                </div>
-
-                <button class="filter-reset" id="reset-filters">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M21 3V8H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Reset
-                </button>
-            </div>
-
-            <div class="results-count">
-                Showing <span id="results-number">8</span> outdoor activities
+            <div class="section-tabs" id="section-tabs">
+                <button class="section-tab active" data-section="all">All</button>
+                <button class="section-tab" data-section="tennis">Tennis & Padel</button>
+                <button class="section-tab" data-section="gym">Gyms & Fitness</button>
+                <button class="section-tab" data-section="horse">Horse Riding</button>
+                <button class="section-tab" data-section="football">5x5 Football</button>
+                <button class="section-tab" data-section="beach-volley">Beach Volleyball</button>
+                <button class="section-tab" data-section="yoga">Yoga & Wellness</button>
             </div>
         </div>
     </section>
 
-    <!-- Listings Grid -->
+    <!-- Listings by Section -->
     <section class="listings-section">
         <div class="container">
-            <div class="listings-grid" id="listings-grid">
-                <!-- Listing Item 1 -->
-                <div class="listing-card" data-location="navagio" data-price="moderate" data-type="boat">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=600&q=80" alt="Navagio Boat Tour" loading="lazy">
-                        <div class="listing-badge top-rated">🚤 Must Do</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Navagio & Blue Caves Tour</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-                                <span>4.9</span>
+
+            <!-- ========== TENNIS & PADEL ========== -->
+            <div class="category-section" data-category="tennis">
+                <div class="category-section-header">
+                    <span class="category-section-icon">🎾</span>
+                    <h2 class="category-section-title">Tennis & Padel</h2>
+                    <span class="category-section-count">2 venues</span>
+                </div>
+                <div class="listings-grid">
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=600&q=80" alt="Caretta Tennis & Padel Club" loading="lazy">
+                            <div class="listing-badge top-rated">🎾 Sports Complex</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Caretta Tennis & Padel Club</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.4</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Sports Complex</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Kalamaki</span>
+                            </div>
+                            <div class="listing-hours">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                Mon - Sat: 16:00 - 00:00
+                            </div>
+                            <p class="listing-description">3 clay tennis courts and 2 padel courts. Offers coaching lessons and equipment rental. Book via phone or WhatsApp.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">3 Tennis Courts</span>
+                                <span class="highlight-tag">2 Padel Courts</span>
+                                <span class="highlight-tag">Coaching</span>
+                            </div>
+                            <div class="listing-footer">
+                                <div class="listing-price">€€</div>
+                                <span class="btn-view-details">Book via WhatsApp</span>
                             </div>
                         </div>
-                        <div class="listing-type">Boat Tour</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Navagio Area</span>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=600&q=80" alt="Varres Tennis & Padel Club" loading="lazy">
+                            <div class="listing-badge local-favorite">⭐ 5.0 Rated</div>
                         </div>
-                        <p class="listing-description">Iconic boat trip to Shipwreck Beach and the stunning Blue Caves. Swim in crystal-clear turquoise waters and explore sea caves.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Full Day</span>
-                            <span class="highlight-tag">Swimming</span>
-                            <span class="highlight-tag">Iconic Views</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=201" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Varres Tennis & Padel Club</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Tennis & Padel Club</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Varres, Zakynthos</span>
+                            </div>
+                            <p class="listing-description">4 clay tennis courts and 1 padel court in a beautiful setting with waiting area and refreshment bar. Rackets and balls included (~€40/hr for padel).</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">4 Tennis Courts</span>
+                                <span class="highlight-tag">1 Padel Court</span>
+                                <span class="highlight-tag">Equipment Included</span>
+                            </div>
+                            <div class="listing-footer">
+                                <div class="listing-price">~€40/hr</div>
+                                <span class="btn-view-details">Book via Phone</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Listing Item 2 -->
-                <div class="listing-card" data-location="porto-limnionas" data-price="budget" data-type="diving">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Scuba Diving Porto Limnionas" loading="lazy">
-                        <div class="listing-badge local-favorite">🤿 Top Rated</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Scuba Diving Experience</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-                                <span>4.8</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Diving & Snorkeling</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Porto Limnionas</span>
-                        </div>
-                        <p class="listing-description">Explore the underwater world of Zakynthos with certified instructors. Perfect for beginners and experienced divers alike.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Beginner Friendly</span>
-                            <span class="highlight-tag">Equipment Included</span>
-                            <span class="highlight-tag">Certified</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€</div>
-                            <a href="zantelocals-listing.html?id=202" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 3 -->
-                <div class="listing-card" data-location="mount-skopos" data-price="budget" data-type="hiking">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="Mount Skopos Hike" loading="lazy">
-                        <div class="listing-badge best-value">🥾 Best Hike</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Mount Skopos Summit Hike</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-                                <span>4.7</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Hiking Trail</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Mount Skopos</span>
-                        </div>
-                        <p class="listing-description">Hike to the highest point of southern Zakynthos. Panoramic 360-degree views of the island, monastery ruins, and breathtaking sunsets.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Panoramic Views</span>
-                            <span class="highlight-tag">2-3 Hours</span>
-                            <span class="highlight-tag">Free</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€</div>
-                            <a href="zantelocals-listing.html?id=203" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 4 -->
-                <div class="listing-card" data-location="keri" data-price="moderate" data-type="kayaking">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1472745942893-4b9f730c7668?w=600&q=80" alt="Sea Kayaking Keri Caves" loading="lazy">
-                        <div class="listing-badge local-favorite">❤️ Local Favorite</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Sea Kayaking Keri Caves</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-                                <span>4.8</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Kayaking Adventure</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Keri</span>
-                        </div>
-                        <p class="listing-description">Paddle through dramatic sea caves and hidden coves along the southern coast. Crystal-clear waters, cliff jumping spots, and secluded beaches.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Sea Caves</span>
-                            <span class="highlight-tag">Half Day</span>
-                            <span class="highlight-tag">All Levels</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=204" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 5 -->
-                <div class="listing-card" data-location="laganas-bay" data-price="moderate" data-type="boat">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=600&q=80" alt="Turtle Spotting Tour" loading="lazy">
-                        <div class="listing-badge top-rated">🐢 Unique</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Turtle Spotting Eco Tour</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-                                <span>4.9</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Eco Boat Tour</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Laganas Bay</span>
-                        </div>
-                        <p class="listing-description">Spot the famous Caretta-Caretta loggerhead turtles in their natural habitat. Eco-friendly glass-bottom boats with marine biologist guides.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Eco-Friendly</span>
-                            <span class="highlight-tag">Family Friendly</span>
-                            <span class="highlight-tag">Glass Bottom</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=205" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 6 -->
-                <div class="listing-card" data-location="vasilikos" data-price="moderate" data-type="cycling">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=600&q=80" alt="Mountain Biking Vasilikos" loading="lazy">
-                        <div class="listing-badge best-value">🚴 Adventure</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Mountain Biking Peninsula</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-                                <span>4.6</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Cycling Tour</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Vasilikos Peninsula</span>
-                        </div>
-                        <p class="listing-description">Explore scenic trails through olive groves and coastal paths on the Vasilikos peninsula. Bikes and helmets provided with guided routes.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Guided</span>
-                            <span class="highlight-tag">Bike Included</span>
-                            <span class="highlight-tag">Scenic</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€</div>
-                            <a href="zantelocals-listing.html?id=206" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 7 -->
-                <div class="listing-card" data-location="marathonisi" data-price="upscale" data-type="boat">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Marathonisi Island Trip" loading="lazy">
-                        <div class="listing-badge top-rated">🏝️ Paradise</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Private Marathonisi Island</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-                                <span>4.9</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Private Boat Charter</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Marathonisi (Turtle Island)</span>
-                        </div>
-                        <p class="listing-description">Private boat to the famous Turtle Island. Snorkel in pristine waters, walk untouched beaches, and spot nesting sea turtles.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Private</span>
-                            <span class="highlight-tag">Snorkeling</span>
-                            <span class="highlight-tag">VIP</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€€€</div>
-                            <a href="zantelocals-listing.html?id=207" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listing Item 8 -->
-                <div class="listing-card" data-location="porto-limnionas" data-price="budget" data-type="climbing">
-                    <div class="listing-image">
-                        <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?w=600&q=80" alt="Cliff Jumping & Coasteering" loading="lazy">
-                        <div class="listing-badge local-favorite">🧗 Adrenaline</div>
-                        <button class="favorite-btn" aria-label="Add to favorites">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                    </div>
-                    <div class="listing-content">
-                        <div class="listing-header">
-                            <h3 class="listing-title">Cliff Jumping & Coasteering</h3>
-                            <div class="listing-rating">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-                                <span>4.7</span>
-                            </div>
-                        </div>
-                        <div class="listing-type">Coasteering Adventure</div>
-                        <div class="listing-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>Porto Limnionas</span>
-                        </div>
-                        <p class="listing-description">Adrenaline-fuelled coasteering along dramatic cliffs. Cliff jumping, rock scrambling, cave swimming, and coastal traversing with guides.</p>
-                        <div class="listing-highlights">
-                            <span class="highlight-tag">Cliff Jumping</span>
-                            <span class="highlight-tag">Cave Swimming</span>
-                            <span class="highlight-tag">Guided</span>
-                        </div>
-                        <div class="listing-footer">
-                            <div class="listing-price">€</div>
-                            <a href="zantelocals-listing.html?id=208" class="btn-view-details">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Load More Button -->
-            <div class="load-more-container">
-                <button class="btn btn-outline btn-large" id="load-more">
-                    Load More Activities
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 5V19M5 12L12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+            <!-- ========== GYMS & FITNESS ========== -->
+            <div class="category-section" data-category="gym">
+                <div class="category-section-header">
+                    <span class="category-section-icon">💪</span>
+                    <h2 class="category-section-title">Gyms & Fitness</h2>
+                    <span class="category-section-count">7 venues</span>
+                </div>
+                <div class="listings-grid">
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="ICON GYM" loading="lazy">
+                            <div class="listing-badge top-rated">⭐ Popular</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">ICON GYM</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Fitness Center</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Zakynthos Town</span>
+                            </div>
+                            <div class="listing-hours">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                Mon-Fri 08:00-23:00 · Sat 09:00-20:00
+                            </div>
+                            <p class="listing-description">Central gym with multi-use machines, free weights, and cardio equipment. Great for daily workouts and personal training.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Free Weights</span>
+                                <span class="highlight-tag">Cardio</span>
+                                <span class="highlight-tag">Personal Training</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Athlokinisi" loading="lazy">
+                            <div class="listing-badge local-favorite">❤️ Top Rated</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Athlokinisi</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Fitness Center</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Gaitani</span>
+                            </div>
+                            <div class="listing-hours">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                Daily 08:00-23:00 · Sat 09:00-19:00
+                            </div>
+                            <p class="listing-description">Highest rated gym on the island. Personalized programs, personal training, Pilates, aqua aerobic, and excellent service.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Pilates</span>
+                                <span class="highlight-tag">Aqua Aerobic</span>
+                                <span class="highlight-tag">Personal Training</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Island Fit Club" loading="lazy">
+                            <div class="listing-badge best-value">💪 Specialized</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Island Fit Club</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Gym</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Argassi</span>
+                            </div>
+                            <div class="listing-hours">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                09:00-13:00 & 16:00-21:00
+                            </div>
+                            <p class="listing-description">Boutique gym with equipment and group programs. Great for flexible workout schedules in the Argassi area.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Group Classes</span>
+                                <span class="highlight-tag">Equipment</span>
+                                <span class="highlight-tag">Flexible Hours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Golden Gym Laganas" loading="lazy">
+                            <div class="listing-badge top-rated">🏋️ 700m²</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Golden Gym Laganas</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Large Fitness Center</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Laganas</span>
+                            </div>
+                            <div class="listing-hours">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                Daily 09:00 - 00:00
+                            </div>
+                            <p class="listing-description">700m² modern facility. Aerobics, Zumba, MMA, Cross Training and more. Very popular with locals and tourists.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Zumba</span>
+                                <span class="highlight-tag">MMA</span>
+                                <span class="highlight-tag">Cross Training</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1570829460005-c840387bb1ca?w=600&q=80" alt="Icon Gym Tsilivi" loading="lazy">
+                            <div class="listing-badge best-value">🏖️ Tsilivi</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Icon Gym Tsilivi</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Gym</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Tsilivi</span>
+                            </div>
+                            <div class="listing-hours">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                Daily 08:00 - 00:00
+                            </div>
+                            <p class="listing-description">Well-equipped gym in the Tsilivi resort area. Great choice if you're staying or holidaying in Tsilivi.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Full Equipment</span>
+                                <span class="highlight-tag">Late Hours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="Body and Soul Fitness Club" loading="lazy">
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Body and Soul Fitness Club</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Gym</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Zakynthos Town</span>
+                            </div>
+                            <p class="listing-description">Gym with standard equipment for free exercise. Good option for daily weights and cardio workouts in town.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Weights</span>
+                                <span class="highlight-tag">Cardio</span>
+                                <span class="highlight-tag">Central</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&q=80" alt="ZO - Zantefitness Retreats" loading="lazy">
+                            <div class="listing-badge local-favorite">🌿 Unique</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">ZO - Zantefitness Retreats</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Outdoor Fitness & Wellness</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Zakynthos</span>
+                            </div>
+                            <p class="listing-description">Studio combining fitness programs with outdoor activities. Something different from classic gyms - exercise meets wellbeing in a relaxed environment.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Outdoor</span>
+                                <span class="highlight-tag">Retreats</span>
+                                <span class="highlight-tag">Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- ========== YOGA & WELLNESS ========== -->
+            <div class="category-section" data-category="yoga">
+                <div class="category-section-header">
+                    <span class="category-section-icon">🧘</span>
+                    <h2 class="category-section-title">Yoga & Wellness</h2>
+                    <span class="category-section-count">1 venue</span>
+                </div>
+                <div class="listings-grid">
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Yoga For Everybody" loading="lazy">
+                            <div class="listing-badge local-favorite">🧘 Peaceful</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Yoga For Everybody</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Yoga & Meditation</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Akrotiri, Zakynthos</span>
+                            </div>
+                            <p class="listing-description">Yoga, fitness, and meditation sessions in a serene setting. Group classes from ~€10-20 and private sessions from ~€25-50.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Group €10-20</span>
+                                <span class="highlight-tag">Private €25-50</span>
+                                <span class="highlight-tag">Meditation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== HORSE RIDING ========== -->
+            <div class="category-section" data-category="horse">
+                <div class="category-section-header">
+                    <span class="category-section-icon">🐴</span>
+                    <h2 class="category-section-title">Horse Riding</h2>
+                    <span class="category-section-count">6 venues</span>
+                </div>
+                <div class="listings-grid">
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&q=80" alt="Laganas Horse Riding Center" loading="lazy">
+                            <div class="listing-badge top-rated">🐴 Most Popular</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Laganas Horse Riding Center</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.7</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Horse Riding Center</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Kalamaki / Laganas</span>
+                            </div>
+                            <p class="listing-description">The most organized and popular riding center on the island. Nature rides, beach trails, and experiences for beginners. Horse swimming available on longer sessions.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">45-60min ~€30-35</span>
+                                <span class="highlight-tag">2-3hrs €60-80+</span>
+                                <span class="highlight-tag">Beginners Welcome</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1450052590821-8bf91254a353?w=600&q=80" alt="Yannis Horses" loading="lazy">
+                            <div class="listing-badge local-favorite">❤️ Traditional</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Yannis Horses</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Horse Riding</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Kato Gerakari</span>
+                            </div>
+                            <p class="listing-description">Traditional riding center with extensive experience. Lessons, nature rides, and multi-hour experiences with beach and swimming options.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">1hr ~€35</span>
+                                <span class="highlight-tag">2hrs ~€60-70</span>
+                                <span class="highlight-tag">Beach Ride €80+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1509315811345-a59caa8aae37?w=600&q=80" alt="Lucky Luke Horse Riding" loading="lazy">
+                            <div class="listing-badge best-value">🏖️ Seaside</div>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Lucky Luke Horse Riding</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.6</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Horse Riding</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Alykanas</span>
+                            </div>
+                            <p class="listing-description">Seaside horse riding in northern Zakynthos. Beautiful trails by the sea and through nature. Great choice for coastal experiences.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">45min ~€30-32</span>
+                                <span class="highlight-tag">90min ~€50-55</span>
+                                <span class="highlight-tag">Seaside Trails</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?w=600&q=80" alt="Athina & Dennis Horse Riding" loading="lazy">
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Athina & Dennis Horse Riding</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Horse Riding</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Near Tsilivi</span>
+                            </div>
+                            <p class="listing-description">Smaller, more personal riding center near Tsilivi. Rides and basic lessons available. €30-50 per hour depending on the route.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">€30-50/hr</span>
+                                <span class="highlight-tag">Personal</span>
+                                <span class="highlight-tag">Lessons</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?w=600&q=80" alt="Happy Horses Zakynthos" loading="lazy">
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Happy Horses Zakynthos</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.6</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Horse Riding</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Zakynthos</span>
+                            </div>
+                            <p class="listing-description">Nature rides and beginner-friendly experiences. ~€30-40 per hour. Relaxed atmosphere and well-cared-for horses.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">~€30-40/hr</span>
+                                <span class="highlight-tag">Nature Rides</span>
+                                <span class="highlight-tag">Beginners</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80" alt="Nanas Horses Zakynthos" loading="lazy">
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Nanas Horses Zakynthos</h3>
+                                <div class="listing-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div class="listing-type">Horse Riding Tours</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Zakynthos</span>
+                            </div>
+                            <p class="listing-description">Guided horse riding tours around the island. Explore scenic trails and countryside. ~€35 per hour.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">~€35/hr</span>
+                                <span class="highlight-tag">Guided Tours</span>
+                                <span class="highlight-tag">Scenic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== 5x5 FOOTBALL ========== -->
+            <div class="category-section" data-category="football">
+                <div class="category-section-header">
+                    <span class="category-section-icon">⚽</span>
+                    <h2 class="category-section-title">5x5 Football</h2>
+                    <span class="category-section-count">4 venues</span>
+                </div>
+                <div class="listings-grid">
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=600&q=80" alt="5X5 Football Limni Keriou" loading="lazy">
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">5X5 Football Pitch</h3>
+                            </div>
+                            <div class="listing-type">Mini Football</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Limni Keriou</span>
+                            </div>
+                            <p class="listing-description">5-a-side football pitch in the Keri Lake area. Great for a game with friends or joining a local match.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">5-a-side</span>
+                                <span class="highlight-tag">Casual Games</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80" alt="Lory's Sports" loading="lazy">
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Lory's Sports</h3>
+                            </div>
+                            <div class="listing-type">5x5 Football</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Laganas</span>
+                            </div>
+                            <p class="listing-description">5-a-side pitch on the Laganas main road. Great for games and workout sessions near the tourist area.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">5-a-side</span>
+                                <span class="highlight-tag">Central</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=600&q=80" alt="STRATOS CLUB" loading="lazy">
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">STRATOS CLUB</h3>
+                            </div>
+                            <div class="listing-type">5x5 Football</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Zakynthos Town</span>
+                            </div>
+                            <p class="listing-description">5-a-side football pitch on Stravopodi Street in town center. Training and casual matches available.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">5-a-side</span>
+                                <span class="highlight-tag">In Town</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=600&q=80" alt="Zakynthos Municipal Stadium" loading="lazy">
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-header">
+                                <h3 class="listing-title">Zakynthos Municipal Stadium</h3>
+                            </div>
+                            <div class="listing-type">Stadium</div>
+                            <div class="listing-location">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>Zakynthos Town</span>
+                            </div>
+                            <p class="listing-description">Main municipal stadium. Sometimes available for training sessions or smaller games when not in official use.</p>
+                            <div class="listing-highlights">
+                                <span class="highlight-tag">Full Size</span>
+                                <span class="highlight-tag">Check Availability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== BEACH VOLLEYBALL ========== -->
+            <div class="category-section" data-category="beach-volley">
+                <div class="category-section-header">
+                    <span class="category-section-icon">🏐</span>
+                    <h2 class="category-section-title">Beach Volleyball</h2>
+                    <span class="category-section-count">4 beaches</span>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card-icon">🏖️</div>
+                        <h3 class="info-card-title">Laganas Beach</h3>
+                        <p class="info-card-desc">Large sandy beach with space and groups playing beach volley, especially at midday. Bring your own ball or join a pickup game.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">🍌</div>
+                        <h3 class="info-card-title">Banana Beach (Vasilikos)</h3>
+                        <p class="info-card-desc">Beach volleyball court available along the stretch. Popular spot for games during summer season.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">🌊</div>
+                        <h3 class="info-card-title">Tsilivi Beach</h3>
+                        <p class="info-card-desc">Beach volleyball setup available especially in summer. Great location close to resorts and bars.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">☀️</div>
+                        <h3 class="info-card-title">Alykanas Beach</h3>
+                        <p class="info-card-desc">Beachfront volleyball facilities and open space for pickup games along the waterfront area.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -495,9 +838,7 @@
                 <p class="cta-subtitle">Get in touch and we'll help you plan the perfect outdoor experience in Zakynthos</p>
                 <a href="zantelocals-contact.html" class="btn btn-primary btn-large">
                     <span>Contact Us</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
             </div>
         </div>
@@ -511,19 +852,12 @@
                     <a href="index.html" class="footer-logo">
                         <span class="logo-zante">Zante</span><span class="logo-locals">Locals</span>
                     </a>
-                    <p class="footer-description">
-                        Discover Zakynthos like a local. Trusted recommendations for an authentic island experience.
-                    </p>
+                    <p class="footer-description">Discover Zakynthos like a local. Trusted recommendations for an authentic island experience.</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2"/></svg>
-                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/></svg></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2"/></svg></a>
                     </div>
                 </div>
-
                 <div class="footer-section">
                     <h4 class="footer-title">Explore</h4>
                     <ul class="footer-links">
@@ -533,7 +867,6 @@
                         <li><a href="zantelocals-rentals.html">Rentals</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h4 class="footer-title">Company</h4>
                     <ul class="footer-links">
@@ -541,61 +874,55 @@
                         <li><a href="zantelocals-contact.html">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h4 class="footer-title">Get in Touch</h4>
                     <ul class="footer-contact">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/><path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/></svg>
-                            <span>hello@zantelocals.com</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg>
-                            <span>Zakynthos, Greece</span>
-                        </li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/><path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/></svg><span>hello@zantelocals.com</span></li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/></svg><span>Zakynthos, Greece</span></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; 2026 ZanteLocals. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <span>•</span>
-                    <a href="#">Terms of Service</a>
-                </div>
+                <div class="footer-legal"><a href="#">Privacy Policy</a><span>•</span><a href="#">Terms of Service</a></div>
             </div>
         </div>
     </footer>
 
     <!-- Mobile Bottom Navigation -->
     <nav class="mobile-nav">
-        <a href="index.html" class="mobile-nav-item">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2"/></svg>
-            <span>Home</span>
-        </a>
-        <a href="zantelocals-beaches.html" class="mobile-nav-item">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.5 19H9.5C7.5 19 5.5 18 4 16.5C2.5 15 2 13 2 11C2 9 3 7 4.5 6C6 5 8 5 9.5 5.5C10.5 4 12 3 14 3C16 3 17.5 4 18.5 5.5C20 5 22 5 22 7.5C22 10 20 11 18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 22H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            <span>Beaches</span>
-        </a>
-        <a href="zantelocals-outdoor.html" class="mobile-nav-item active">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 20L9 8L13 16L16 12L21 20H3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="2"/></svg>
-            <span>Outdoor</span>
-        </a>
-        <a href="zantelocals-contact.html" class="mobile-nav-item">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/></svg>
-            <span>Contact</span>
-        </a>
+        <a href="index.html" class="mobile-nav-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2"/></svg><span>Home</span></a>
+        <a href="zantelocals-beaches.html" class="mobile-nav-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.5 19H9.5C7.5 19 5.5 18 4 16.5C2.5 15 2 13 2 11C2 9 3 7 4.5 6C6 5 8 5 9.5 5.5C10.5 4 12 3 14 3C16 3 17.5 4 18.5 5.5C20 5 22 5 22 7.5C22 10 20 11 18.5 11" stroke="currentColor" stroke-width="2"/><path d="M2 22H22" stroke="currentColor" stroke-width="2"/></svg><span>Beaches</span></a>
+        <a href="zantelocals-outdoor.html" class="mobile-nav-item active"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 20L9 8L13 16L16 12L21 20H3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="2"/></svg><span>Outdoor</span></a>
+        <a href="zantelocals-contact.html" class="mobile-nav-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/></svg><span>Contact</span></a>
     </nav>
 
-    <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
 
     <script src="zantelocals-script.js"></script>
     <script src="zantelocals-category.js"></script>
+    <script>
+        // Section tab filtering
+        const tabs = document.querySelectorAll('.section-tab');
+        const sections = document.querySelectorAll('.category-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const target = tab.dataset.section;
+
+                sections.forEach(section => {
+                    if (target === 'all' || section.dataset.category === target) {
+                        section.classList.remove('hidden-section');
+                    } else {
+                        section.classList.add('hidden-section');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
