@@ -469,8 +469,17 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-dark) 100%);
     z-index: -1;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-overlay {
@@ -479,9 +488,13 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background:
-        radial-gradient(circle at 20% 50%, rgba(217, 119, 87, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(95, 179, 167, 0.12) 0%, transparent 50%);
+    background: linear-gradient(
+        135deg,
+        rgba(31, 107, 71, 0.8) 0%,
+        rgba(45, 139, 95, 0.75) 50%,
+        rgba(31, 107, 71, 0.82) 100%
+    );
+    z-index: 1;
 }
 
 .floating-elements {
@@ -491,6 +504,7 @@ button {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    z-index: 2;
 }
 
 .float-element {
@@ -1509,59 +1523,9 @@ section {
    Trip Planner Section
    =================================== */
 .trip-planner {
+    background: linear-gradient(180deg, var(--white) 0%, #f0f7f4 50%, var(--white) 100%);
     position: relative;
     overflow: hidden;
-}
-
-/* Video Background */
-.trip-planner-video-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.trip-planner-video-bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.trip-planner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        180deg,
-        rgba(31, 107, 71, 0.82) 0%,
-        rgba(45, 139, 95, 0.78) 50%,
-        rgba(31, 107, 71, 0.85) 100%
-    );
-}
-
-.trip-planner .container {
-    position: relative;
-    z-index: 1;
-}
-
-.trip-planner-badge {
-    background-color: rgba(255, 255, 255, 0.18) !important;
-    color: var(--white) !important;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.trip-planner-title {
-    color: var(--white) !important;
-    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
-}
-
-.trip-planner-subtitle {
-    color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .trip-planner-grid {
@@ -1816,7 +1780,7 @@ section {
     text-align: center;
     margin-top: var(--spacing-xl);
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--medium-gray);
     font-style: italic;
     max-width: 600px;
     margin-left: auto;
