@@ -491,8 +491,8 @@ button {
     background: linear-gradient(
         135deg,
         rgba(31, 107, 71, 0.8) 0%,
-        rgba(45, 139, 95, 0.75) 50%,
-        rgba(31, 107, 71, 0.82) 100%
+        rgba(45, 139, 95, 0.75) 40%,
+        rgba(31, 107, 71, 0.82) 80%
     );
     z-index: 1;
 }
