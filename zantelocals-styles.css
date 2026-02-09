@@ -1526,7 +1526,7 @@ section {
     .trip-planner-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.75rem;
-        align-items: center;
+        align-items: stretch;
     }
 }
 
