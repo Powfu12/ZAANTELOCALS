@@ -335,6 +335,18 @@ document.addEventListener('DOMContentLoaded', () => {
 const categorySearch = document.getElementById('category-search');
 const searchClear = document.getElementById('search-clear');
 const categoryCardsAll = document.querySelectorAll('.category-card');
+const viewMoreContainer = document.querySelector('.categories-view-more');
+
+function resetSearch() {
+    categoryCardsAll.forEach(card => {
+        card.classList.remove('dimmed', 'highlight', 'search-match');
+        card.style.display = '';
+    });
+    // Restore View More button visibility
+    if (viewMoreContainer) {
+        viewMoreContainer.style.display = '';
+    }
+}
 
 if (categorySearch) {
     categorySearch.addEventListener('input', debounce(function(e) {
@@ -346,30 +358,37 @@ if (categorySearch) {
         }
 
         if (searchTerm === '') {
-            // Reset all cards
-            categoryCardsAll.forEach(card => {
-                card.classList.remove('dimmed', 'highlight');
-            });
+            resetSearch();
             return;
         }
+
+        // Hide View More button during search
+        if (viewMoreContainer) {
+            viewMoreContainer.style.display = 'none';
+        }
+
+        let hasResults = false;
 
         categoryCardsAll.forEach(card => {
             const title = card.querySelector('.category-title')?.textContent.toLowerCase() || '';
             const description = card.querySelector('.category-description')?.textContent.toLowerCase() || '';
             const category = card.dataset.category?.toLowerCase() || '';
+            const count = card.querySelector('.category-count')?.textContent.toLowerCase() || '';
 
             const matches = title.includes(searchTerm) ||
                            description.includes(searchTerm) ||
-                           category.includes(searchTerm);
+                           category.includes(searchTerm) ||
+                           count.includes(searchTerm);
 
             if (matches) {
+                hasResults = true;
+                card.style.display = 'flex';
                 card.classList.remove('dimmed');
-                card.classList.add('highlight');
-                // Remove highlight class after animation
+                card.classList.add('search-match', 'highlight');
                 setTimeout(() => card.classList.remove('highlight'), 600);
             } else {
-                card.classList.add('dimmed');
-                card.classList.remove('highlight');
+                card.style.display = 'none';
+                card.classList.remove('highlight', 'search-match');
             }
         });
     }, 200));
@@ -379,12 +398,20 @@ if (categorySearch) {
         searchClear.addEventListener('click', function() {
             categorySearch.value = '';
             searchClear.classList.remove('visible');
-            categoryCardsAll.forEach(card => {
-                card.classList.remove('dimmed', 'highlight');
-            });
+            resetSearch();
             categorySearch.focus();
         });
     }
+
+    // Also reset on Escape key
+    categorySearch.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            categorySearch.value = '';
+            searchClear?.classList.remove('visible');
+            resetSearch();
+            categorySearch.blur();
+        }
+    });
 }
 
 // ===================================

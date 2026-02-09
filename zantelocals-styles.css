@@ -1461,7 +1461,8 @@ section {
     display: none;
 }
 
-.category-hidden.category-visible {
+.category-hidden.category-visible,
+.category-hidden.search-match {
     display: flex;
     animation: fadeSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
