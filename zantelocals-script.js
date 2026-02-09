@@ -388,6 +388,25 @@ if (categorySearch) {
 }
 
 // ===================================
+// View More Categories Toggle
+// ===================================
+const viewMoreBtn = document.getElementById('viewMoreCategories');
+if (viewMoreBtn) {
+    viewMoreBtn.addEventListener('click', function() {
+        const hiddenCards = document.querySelectorAll('.category-hidden');
+        const isExpanded = viewMoreBtn.classList.toggle('expanded');
+
+        hiddenCards.forEach(card => {
+            card.classList.toggle('category-visible', isExpanded);
+        });
+
+        viewMoreBtn.querySelector('span').textContent = isExpanded
+            ? 'Show Less'
+            : 'View More Categories';
+    });
+}
+
+// ===================================
 // Export functions for use in other files
 // ===================================
 window.ZanteLocals = {
